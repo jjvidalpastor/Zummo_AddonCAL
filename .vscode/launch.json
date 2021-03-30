@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "al",
+      "request": "launch",
+      "name": "Publish",
+      "server": "https://localhost:7149",
+      "serverInstance": "BC140",
+      "authentication": "UserPassword"
+    }
+  ]
+}

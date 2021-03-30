@@ -1,0 +1,27 @@
+{
+  "id": "01d96842-2a7f-4b02-868f-8bba1a594174",
+  "name": "AddonCAL",
+  "publisher": "Business Intelligence Technology, S.L.",
+  "brief": "Producto para gestión de calidad.",
+  "description": "Producto para gestión de calidad.",
+  "version": "1.0.0.3",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "https://www.bitec.es/",
+  "url": "https://www.bitec.es/",
+  "logo": "./logo/logo.jpg",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "14.0.29530.0",
+  "application": "14.0.29537.0",
+  "target": "Internal",
+  "showMyCode": true,
+  "runtime": "3.0",
+  "idRanges": [
+    {
+      "from": 65100,
+      "to": 65200
+    }
+  ]
+}
