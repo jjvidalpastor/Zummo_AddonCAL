@@ -342,7 +342,7 @@ table 65111 "Cab inspe eval_CAL_btc"
                 UserMgt.LookupUserID("Certificado por usuario");
             end;
         }
-        field(46; "Descripción producto"; Text[50])
+        field(46; "Descripción producto"; Text[100])
         {
             CalcFormula = Lookup(Item.Description WHERE("No." = FIELD("No. producto")));
             Caption = 'Descripcion producto';
