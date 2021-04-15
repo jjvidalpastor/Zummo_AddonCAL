@@ -1,6 +1,6 @@
 codeunit 65107 "GeneracionInspAut"
 {
-    Permissions = tabledata "Item Ledger Entry" = m;
+    Permissions = tabledata "Item Ledger Entry" = rmid, tabledata "Purch. Rcpt. Line" = rmid;
 
     trigger OnRun();
     begin
