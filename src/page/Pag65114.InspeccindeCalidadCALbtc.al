@@ -512,7 +512,7 @@ page 65114 "Inspección de Calidad_CAL_btc"
                     //END FJAB 311019
                 end;
             }
-            action("Crear Devolución parcial Inspección")
+            action("Crear inspección parcial")
             {
                 Image = Return;
                 Promoted = true;

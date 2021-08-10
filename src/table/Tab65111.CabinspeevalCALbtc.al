@@ -622,10 +622,12 @@ table 65111 "Cab inspe eval_CAL_btc"
         field(50001; QtytoReturn; Decimal)
         {
             TableRelation = "Item Ledger Entry"."Entry No.";
+            Caption = 'Cantidad a devolver', comment = 'ESP="Cantidad a devolver"';
         }
 
         field(50002; InspeccionReturn; code[20])
         {
+            Caption = 'Nº Inspección', comment = 'ESP="Nº Inspección"';
             Editable = false;
             TableRelation = "Item Ledger Entry"."Entry No.";
         }
@@ -633,6 +635,12 @@ table 65111 "Cab inspe eval_CAL_btc"
         {
             Caption = 'Cod. almacen destino';
             TableRelation = Location;
+
+            trigger OnValidate()
+            begin
+                if Rec."Cód. almacén" = rec."Cód. almacén destino" then
+                    Error(text000);
+            end;
         }
     }
     keys
@@ -732,6 +740,7 @@ table 65111 "Cab inspe eval_CAL_btc"
         DateTimeBlank: DateTime;
         DateBlank: Date;
         NumLin: Integer;
+        text000: Label 'No puede ser el almacén destino el mismo que el origen', comment = 'ESP="No puede ser el almacén destino el mismo que el origen"';
 
     procedure CalcCantidadSugerida()
     begin

@@ -78,6 +78,7 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         //if (ProdOrder."Estado inspección" = ProdOrder."Estado inspección"::Certificada) and (NewStatus <> NewStatus::Terminada) then
         //  Error('Estado Confirmada sólo puede cambiar a Terminada');
         if (ProdOrder."Estado inspección" = ProdOrder."Estado inspección"::Certificada) and not (NewStatus = NewStatus::Terminada) then exit;
+
         //FIN S20/00403
         GestionCalidadSetup.Init();
         GestionCalidadSetup.Get();
@@ -466,11 +467,13 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
     procedure DividirOrdenProd(var ProdOrder: Record "Cab inspe eval_CAL_btc")
     var
         NoInspeccion: code[20];
+        Inspeccion: Record "Cab inspe eval_CAL_btc";
     begin
-        ProdOrder.TestField("Estado inspección", ProdOrder."Estado inspección"::Certificada);
+        ProdOrder.TestField("Estado inspección", ProdOrder."Estado inspección"::Lanzada);
         // comprobar cantidades a crear devolución
         if (ProdOrder.QtytoReturn <= 0) or (ProdOrder.QtytoReturn >= ProdOrder."Cantidad Inspeccionada") then
             error('Debe indicar una cantidad mayor que 0 y menor que %1 en "Cantidad a devolver"', ProdOrder."Cantidad Inspeccionada");
+        ProdOrder.TestField("Cód. almacén destino");
 
 
         ItemLedgerEntry.Reset();
@@ -488,7 +491,19 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
             ParWAL."Lot No." := ItemLedgerEntry."Lot No.";
             ParWAL."Bin Code" := ItemLedgerEntry."Location Code";
             GenereacionInspAut.DiarioReclasificacion(TipoMtoDiario::Transfer, TODAY(), ParWAL, ABS(ProdOrder.QtytoReturn), '', NoInspeccion,
-                ItemLedgerEntry."Location Code", ItemLedgerEntry."Location Code", '', ItemLedgerEntry."Entry No.", TRUE);
+                ProdOrder."Cód. almacén destino", ProdOrder."Cód. almacén destino", '', ItemLedgerEntry."Entry No.", TRUE);
+            ItemLedgerEntry.Reset();
+            ItemLedgerEntry.SetRange("Document No.", NoInspeccion);
+            ItemLedgerEntry.SetRange(Open, true);
+            if ItemLedgerEntry.FindSet() then begin
+                if Inspeccion.get(NoInspeccion) then begin
+                    Inspeccion.EntryNo := ItemLedgerEntry."Entry No.";
+                    Inspeccion.Modify();
+                end;
+            end;
+            ProdOrder."Cantidad Inspeccionada" := ProdOrder."Cantidad Inspeccionada" - ProdOrder.QtytoReturn;
+            ProdOrder.InspeccionReturn := Inspeccion."No.";
+            ProdOrder.Modify();
         end;
 
     end;
@@ -503,6 +518,8 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         Inspeccion."No." := '';
         Inspeccion.EntryNo := 0;
         Inspeccion."Cantidad Inspeccionada" := InspeccionOld.QtytoReturn;
+        Inspeccion.QtytoReturn := 0;
+        Inspeccion."Cód. almacén destino" := '';
         Inspeccion.Insert(true);
         //InspeccionOld."Cantidad Inspeccionada" := InspeccionOld."Cantidad Inspeccionada" - InspeccionOld.QtytoReturn;
         //InspeccionOld.Modify();

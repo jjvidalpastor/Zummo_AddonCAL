@@ -398,7 +398,7 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field Descripcion - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 1730686551 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 1730686551 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Origin Inspection</source>
           <note from="Developer" annotates="general" priority="2">ESP="Origen Inspección"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field Origen inspección - Property Caption</note>
@@ -519,31 +519,31 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field Tipo de Requisitos Específicos - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 2360479070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 2360479070 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Origin Table ID</source>
           <note from="Developer" annotates="general" priority="2">ESP="Id Tabla Origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field TablaOrigen - Property Caption</note>
           <target>Id Tabla Origen</target>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 1350176173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 1350176173 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Origin tablename</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nombre Tabla Origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field NombreTablaOrigen - Property Caption</note>
           <target>Nombre Tabla Origen</target>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 2058028952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 2058028952 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Origin table caption</source>
           <note from="Developer" annotates="general" priority="2">ESP="Caption Tabla Origen"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field CaptionTablaOrigen - Property Caption</note>
           <target>Caption Tabla Origen</target>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 1782998446 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 1782998446 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Specific code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Código específico"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field CodEspecifico - Property Caption</note>
           <target>Código específico</target>
         </trans-unit>
-        <trans-unit id="Table 3291043129 - Field 3834791132 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3291043129 - Field 3834791132 - Property 2879900210" size-unit="char" translate="no" xml:space="preserve">
           <source>Source table specific code</source>
           <note from="Developer" annotates="general" priority="2">ESP="Tabla origen código específico"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Plantilla de inseval_CAL_btc - Field TablaOrigenEspecifico - Property Caption</note>
@@ -3733,6 +3733,11 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page NoConformidadCue - Control NoConformidad - Property Caption</note>
           <target>Inpección No conformidad</target>
         </trans-unit>
+        <trans-unit id="Page 3050040650 - Control 2347438355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AddonProduccion</source>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page NoConformidadCue - Control 1 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1909072866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inspection Report</source>
           <note from="Developer" annotates="general" priority="2">ESP="Informe Inspección"</note>
@@ -4039,847 +4044,847 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Informe No Conformidad_CAL_BTC - NamedType TituloLbl</note>
         </trans-unit>
-        <trans-unit id="PageExtension 1021178415 - Control 205750523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1021178415 - Control 205750523 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtItemCard_CAL_btc - Control Calidad_ - Property Caption</note>
           <target>Calidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1021178415 - Control 4097999298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1021178415 - Control 4097999298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtItemCard_CAL_btc - Control Calidad - Property Caption</note>
           <target>Calidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1021178415 - Control 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1021178415 - Control 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Subject to quality management</source>
           <note from="Developer" annotates="general" priority="2">ESP="Sujeto a gestión de calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtItemCard_CAL_btc - Control ActivarGestionCalidadCAL_BTC - Property Caption</note>
           <target>Sujeto a gestión de calidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 1021178415 - Control 864363639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 1021178415 - Control 864363639 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Indicates that the item is subject to quality control</source>
           <note from="Developer" annotates="general" priority="2">ESP="Indica que el producto está sometido a control de calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtItemCard_CAL_btc - Control ActivarGestionCalidadCAL_BTC - Property ToolTip</note>
           <target>Indica que el producto está sometido a control de calidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 3804968629 - Control 1487796238 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3804968629 - Control 1487796238 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4038454596">
           <source>Specifies that the related record is blocked from being posted in transactions, for example a customer that is declared insolvent or an item that is placed in quarantine.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtLotNoInf_CAL_btc - Control Blocked2 - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3804968629 - Control 3261716993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3804968629 - Control 3261716993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4038454596">
           <source>Control</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtLotNoInf_CAL_btc - Control Control - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3804968629 - Control 3977511492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 3804968629 - Control 3977511492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4038454596">
           <source>Origen</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtLotNoInf_CAL_btc - Control Origen - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 226289389 - Control 4097999298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 226289389 - Control 4097999298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3698582500">
           <source>Calidad Avanzada</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtRelProdOr_CAL_btc - Control Calidad - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 226289389 - Control 2424382331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 226289389 - Control 2424382331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3698582500">
           <source>Nº Inspección</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtRelProdOr_CAL_btc - Control Nº Inspección - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2293466993 - Action 2038292200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2293466993 - Action 2038292200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>Reverse lines Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Revertir líneas No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseReturnOrder - Action RevertirNoConformidad - Property Caption</note>
           <target>Revertir líneas No conformidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 2293466993 - Action 2038292200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 2293466993 - Action 2038292200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>It allows to revert Nonconformity lines</source>
           <note from="Developer" annotates="general" priority="2">ESP="Permite revertir líneas de No conformidades"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseReturnOrder - Action RevertirNoConformidad - Property ToolTip</note>
           <target>Permite revertir líneas de No conformidades</target>
         </trans-unit>
-        <trans-unit id="PageExtension 88200053 - Action 2316705172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 88200053 - Action 2316705172 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2187872375">
           <source>View quality inspections</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver inspecciones de calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ProdOrderComponents - Action Inspecciones de calidad - Property Caption</note>
           <target>Ver inspecciones de calidad</target>
         </trans-unit>
-        <trans-unit id="PageExtension 88200053 - Action 3710801367 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 88200053 - Action 3710801367 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2187872375">
           <source>See Nonconformities</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver No conformidades"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ProdOrderComponents - Action No conformidad - Property Caption</note>
           <target>Ver No conformidades</target>
         </trans-unit>
-        <trans-unit id="PageExtension 88200053 - Action 2262108116 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="PageExtension 88200053 - Action 2262108116 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2187872375">
           <source>Create quality inspection</source>
           <note from="Developer" annotates="general" priority="2">ESP="Crear inspección de calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ProdOrderComponents - Action CrearInspeccionCalidad - Property Caption</note>
           <target>Crear inspección de calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 771584635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 771584635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Inspeccion evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field InspeccionCalidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 705798853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 705798853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field NoConformidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 1249105207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 1249105207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Estado homologacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field EstadoHomologacionAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 960353255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 960353255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Estado homologado</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field EstadoHomologadoAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 2720001896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 2720001896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Fecha ultima evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field FechaUltimaEvaluAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 3037545994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 3037545994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Activar gestion de la calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field ActivarGestDeCalidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 2144900992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 2144900992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Cod. plantilla evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field CodPlantillaReclamaAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 992504224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 992504224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Fecha homologación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field FechaHomologacionAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 2397551835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 2397551835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Fecha última reclamación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field FechaUltimaReclamacionAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4120638835 - Field 2056834244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4120638835 - Field 2056834244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Last date blocked</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field LastDateBlockedAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 1307308764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 1307308764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Usuario creacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field UsuarioOPLanzadaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 2087054857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 2087054857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Datetime OP Lanzada</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field DatetimeOPLanzadaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 1900054740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 1900054740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Usuario creacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field UsuarioOPTerminadaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 1776693745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 1776693745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Datetime OP Terminada</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field DatetimeOPTerminadaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 3112409329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 3112409329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Estado revisión visual</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field EstadoRevisiónVisualCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 3112409329 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 3112409329 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Pendiente,Visado,Revisado,No Obligatorio</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field EstadoRevisiónVisualCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 216243134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 216243134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>No.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field No.RelatedOrderCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 3899930333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 3899930333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field DescriptionRelatedOrderCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 3596648569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 3596648569 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Nº Lote</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field NoLoteCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 2207502758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 2207502758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Prioridad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field PrioridadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2598970142 - Field 2207502758 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2598970142 - Field 2207502758 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source> ,A,B,C,D,E</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrder_CAL_btc - Field PrioridadCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2800293817 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2800293817 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4118213496">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetShptLine_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2800293817 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2800293817 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4118213496">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetShptLine_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2800293817 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2800293817 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4118213496">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetShptLine_CAL_btc - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 2800293817 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2800293817 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4118213496">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetShptLine_CAL_btc - Field NumNoConformidad_btc - Property Caption</note>
           <target>Nº No conformidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 2957556811 - Field 2619110645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2957556811 - Field 2619110645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field InspeccionCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2957556811 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2957556811 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2957556811 - Field 578099899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2957556811 - Field 578099899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Usuario creacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field UsuarioRegistroCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2957556811 - Field 2900849794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2957556811 - Field 2900849794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Datetime registro</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field DatetimeRegistroCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1474164445 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1474164445 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtSalesLine_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1474164445 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1474164445 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtSalesLine_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2023106825 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2023106825 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtPurchLine_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2023106825 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2023106825 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtPurchLine_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2023106825 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2023106825 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtPurchLine_CAL_btc - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 2023106825 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2023106825 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1519909599">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtPurchLine_CAL_btc - Field NumNoConformidad_btc - Property Caption</note>
           <target>Nº No conformidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 3122190484 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3122190484 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1173465396">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetRcptLin_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3122190484 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3122190484 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1173465396">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtRetRcptLin_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 1901322423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 1901322423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Supervisor DC Calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field SupervisorDCCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 3392600928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 3392600928 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Supervisor DC Fabricación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field SupervisorDCFabricacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 962565602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 962565602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Supervisor DC Formulación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field SupervisorDCFormulacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 341985391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 341985391 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Supervisor DC Control Visual</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field SupervisorDCControlVisuCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 864288377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 864288377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Nueva caducidad lote</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field NuevaCaducidadLoteCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 1510663941 - Field 2388248726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1510663941 - Field 2388248726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 337631938">
           <source>Retrocede Certificacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtUserSetup_CAL_btc - Field RetrocedeCertificacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2386772877 - Field 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2386772877 - Field 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 615773210">
           <source>Activar gestion de la calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtStandardTask_CAL_btc - Field ActivarGestionCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2386772877 - Field 3139487617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 2386772877 - Field 3139487617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 615773210">
           <source>Cod. plantilla procesos</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtStandardTask_CAL_btc - Field CodPlantillaProcesosCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 771584635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 771584635 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Inspeccion evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field InspeccionCalidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 705798853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 705798853 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field NoConformidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 3602227047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 3602227047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Estado homologacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field EstadoHomologacAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 960353255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 960353255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Estado homologado</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field EstadoHomologadoAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 1711497550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 1711497550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Resultado ultima evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field ResultadoUltEvaAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 2351461299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 2351461299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Fecha ultima evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field FechaUltEvaluAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 2641849505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 2641849505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Activar gestion de la calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field ActivarGestCalidadAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 233878059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 233878059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Cod. plantilla evaluacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CodPlanEvoAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 1026326764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 1026326764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Fecha homologación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field FechaHomologaciónAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 2397551835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 2397551835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Fecha última reclamación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field FechaUltimaReclamacionAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 2846589968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 2846589968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Certificado ISO 9001</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CertifISO9001AGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 1053557910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 1053557910 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Certificado BRC</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CertificadoBRCAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 800473095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 800473095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Certificado IFS</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CertificadoIFSAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 408321056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 408321056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Certificado ISO 22000</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CertificadoISO22000AGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 836698261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 836698261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Certificado GMP</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field CertificadoGMPAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 3361820159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 3361820159 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Fecha caducidad GMP</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field FechaCaducidadGMPAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 746543595 - Field 2056834244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 746543595 - Field 2056834244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1936001480">
           <source>Last date blocked</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtVendor_CAL_btc - Field LastDateBlockedAGR_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4091631178 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4091631178 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrdLin_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4091631178 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4091631178 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrdLin_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 49956944 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 49956944 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 803582013">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrRtLin_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 49956944 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 49956944 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 803582013">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtProdOrRtLin_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2078367198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field InspeccionDeCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>No conformidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field NoConformidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 237077863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 237077863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha caducidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaCaducidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3085349927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3085349927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado control calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoControlCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3085349927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3085349927 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Pendiente,Cuarentena,Aprobado,Recontrolado,Rechazado</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoControlCalidadCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2066117857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2066117857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado aprobado previo</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoAprobadoPrevioCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2945343964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2945343964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>No. lote externo</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field NoLoteExternoCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2039784470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2039784470 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha fabricacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaFabricacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1130281488 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1130281488 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha caducidad previa</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaCaducidadPreviaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1140446215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1140446215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fotografia adjunta</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FotografiaAdjuntaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 542893188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 542893188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Control visual obligatorio</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field ControlVisualObligCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 972498217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 972498217 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha recepcion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaRecepcionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1605952401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1605952401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Observaciones</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field ObservacionesCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 69930865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 69930865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Albaran Proveedor SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field AlbaranProveedorSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1615525872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1615525872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Albaran Proveedor NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field AlbaranProveedorNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1233906846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1233906846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Mercancia Conforme SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field MercanciaConformeSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 4114155851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 4114155851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Mercancia Conforme NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field MercanciaConformeNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3990637343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3990637343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Ficha Seguridad SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FichaSeguridadSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1266911650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1266911650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Ficha Seguridad NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FichaSeguridadNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3405908541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3405908541 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Certificado Analisis SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field CertificadoAnalisisSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3345495148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3345495148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Certificado Analisis NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field CertificadoAnalisisNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1119570619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1119570619 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Recipientes Conformes SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field RecipientesConformesSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1838595086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1838595086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Recipientes Conformes NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field RecipientesConformesNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3385096281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3385096281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Cierres/Precintos Conformes SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field Cierr/PrecinConformesSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2737877320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2737877320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Cierres/Precintos Conformes NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field Cierr/PrecinConformesNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2912402536 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2912402536 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Palets Limpios SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field PaletsLimpiosSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 665823577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 665823577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Palets Limpios NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field PaletsLimpiosNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1704197469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1704197469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Etiquetas Proveedor Visible SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EtiqProveedorVisibleSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3491125644 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3491125644 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Etiquetas Proveedor Visible NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EtiqProveedorVisibleNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3097750438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3097750438 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Ausencia Contam/Manipu SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field AusenciaContam/ManipuSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3110846979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3110846979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Ausencia Contam/Manipu NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field AusenciaContam/ManipuNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2259063575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2259063575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Recipientes Lote por Palet SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field RecipientesLoteXPaletSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3272421674 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3272421674 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Recipientes Lote por Palet NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field RecipientesLoteXPaletNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3961954040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3961954040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Certificado Plaguicidas SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field CertificadPlaguicidasSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 4024669577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 4024669577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Certificado Plaguicidas NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field CertificadPlaguicidasNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2084764973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2084764973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Envasado SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoEnvasadoSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 4054181500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 4054181500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Envasado NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoEnvasadoNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1972984851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1972984851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Etiquetado SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoEtiquetadoSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2034757046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2034757046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Etiquetado NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoEtiquetadoNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 651374950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 651374950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Sanitario SI</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoSanitarioSICAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 530128835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 530128835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado Sanitario NO</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoSanitarioNOCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2721717930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2721717930 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Marcar Todo OK</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field MarcarTodoOKCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 409872025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 409872025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Marcar Todo NO OK</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field MarcarTodoNOOKCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 196717920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 196717920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Usuario creacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field UsuarioCreacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3748984944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3748984944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha ultima modificacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaUltimaModificacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3513208899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3513208899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Usuario ultima modificacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field UsuarioUltimaModificCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3362342848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3362342848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Lanzado por usuario</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field VisadoXUsuarioCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1685432925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1685432925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha lanzamiento</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaVisadoCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2753995957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2753995957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Lanzado por usuario</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field RevisadoXusuarioCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2556122312 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2556122312 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha lanzamiento</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaRevisadoCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2320971021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2320971021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Estado revisión visual</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoRevisionVisualCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2320971021 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2320971021 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Pendiente,Visado,Revisado,No Obligatorio</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field EstadoRevisionVisualCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 777779887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 777779887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Procedencia creación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field ProcedenciaCreacionCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 777779887 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 777779887 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Recepción,Fabricación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field ProcedenciaCreacionCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3821765956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3821765956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Nº Lote Origen Reclasificación</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field LoteOrigenReclasificaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2207502758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2207502758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Prioridad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field PrioridadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 2207502758 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 2207502758 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source> ,A,B,C,D,E</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field PrioridadCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 1176187710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 1176187710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Prod. Order No.</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field ProdOrderNoCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3875255951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3875255951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha caducidad anterior</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaCaducidadAnteriorCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 766648925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 766648925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha caducidad cambiada por</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaCaduCambiadaPorCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3581679945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3581679945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha fabricación anterior</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaFabricacionAnteriCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 508467522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 508467522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Fecha fabricación cambiada por</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field FechaFabricacionCambiXCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3254814489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3254814489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>Test Quality</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field TestQualityCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - Field 3254814489 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - Field 3254814489 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source> ,Good,Average,Bad,Blocked</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - Field TestQualityCAL_BTC - Property OptionCaption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3155578687 - NamedType 2803221334" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3155578687 - NamedType 2803221334" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3361278800">
           <source>El Control Visual no es Obligatorio para este Lote %1 ¿Desea hacerlo obligatorio?</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtLotNoInfo_CAL_btc - NamedType ControlVisualNoObligaQst</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Activar gestion de la calidad</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field ActivarGestionCalidadCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 781556574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 781556574 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Cod. plantilla recepcion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CodPlantillaRecepCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 1391244822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 1391244822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Cod. plantilla almacen</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CodPlantillaAlmacenCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 4088365232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 4088365232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Cod. plantilla fabricacion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CodPlantillaFabricacCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 2377661676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 2377661676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Cod. plantilla envio</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CodPlantillaEnvioCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 18044597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 18044597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Cod. plantilla devolucion</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CodPlantillaDevoCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 2028502440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 2028502440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Calidad concertada</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CalidadConcertadaCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 3619951927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 3619951927 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Certificado calidad concertada</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field CertificCalidadConcertCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 1426159549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 1426159549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Control visual obligatorio</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field ControlVisuObligatorioCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 1163554120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 1163554120 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Production Warehouse</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field AlmacenProdCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 1721457549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 1721457549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Preferred Warehouse</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field AlmacenPreferCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 4137360796 - Field 3778351145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4137360796 - Field 3778351145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Preferred Location</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItem_CAL_btc - Field UbicacionPreferenteCAL_BTC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3338551105 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3338551105 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 959319265">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchRcptLine - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 3338551105 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 3338551105 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 959319265">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchRcptLine - Field NumNoConformidad_btc - Property Caption</note>
           <target>Nº No conformidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 1592073549 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1592073549 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchInvLine - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 1592073549 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1592073549 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2575310733">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchInvLine - Field NumNoConformidad_btc - Property Caption</note>
           <target>Nº No conformidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 1130575092 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1130575092 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoLne - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 1130575092 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 1130575092 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 518488723">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchCrMemoLne - Field NumNoConformidad_btc - Property Caption</note>
           <target>Nº No conformidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 4261530561 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4261530561 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2809873457">
           <source>No. inspection quality</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseLineArchive - Field NumInspeccion_btc - Property Caption</note>
           <target>Nº inspección calidad</target>
         </trans-unit>
-        <trans-unit id="TableExtension 4261530561 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="TableExtension 4261530561 - Field 1882403707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2809873457">
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchaseLineArchive - Field NumNoConformidad_btc - Property Caption</note>
