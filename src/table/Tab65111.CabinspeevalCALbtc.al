@@ -619,6 +619,21 @@ table 65111 "Cab inspe eval_CAL_btc"
             Editable = false;
             TableRelation = "Item Ledger Entry"."Entry No.";
         }
+        field(50001; QtytoReturn; Decimal)
+        {
+            TableRelation = "Item Ledger Entry"."Entry No.";
+        }
+
+        field(50002; InspeccionReturn; code[20])
+        {
+            Editable = false;
+            TableRelation = "Item Ledger Entry"."Entry No.";
+        }
+        field(50003; "Cód. almacén destino"; Code[10])
+        {
+            Caption = 'Cod. almacen destino';
+            TableRelation = Location;
+        }
     }
     keys
     {

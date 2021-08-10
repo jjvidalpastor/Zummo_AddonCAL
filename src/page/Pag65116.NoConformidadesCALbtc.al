@@ -174,6 +174,17 @@ page 65116 "No Conformidades_CAL_btc"
                     pageNoConformidades.RunModal();
                 end;
             }
+            action(DispLocation)
+            {
+                ApplicationArea = all;
+                Caption = 'Disp. por almacén', comment = 'ESP="Disp. por almacén"';
+                Image = Warehouse;
+
+                RunObject = page "Item Availability by Location";
+                RunPageLink = "No." = FIELD("No. producto");
+
+
+            }
         }
         area(reporting)
         {
@@ -199,7 +210,8 @@ page 65116 "No Conformidades_CAL_btc"
     }
     trigger OnOpenPage()
     begin
-        SetFilter("Estado no conformidad", '<>Terminada');
+        // si se llama desde la cue del role center, no funciona correctamente
+        // JJV SetFilter("Estado no conformidad", '<>Terminada');
     end;
 
     var

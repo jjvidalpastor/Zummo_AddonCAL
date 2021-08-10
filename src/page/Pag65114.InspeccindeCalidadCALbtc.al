@@ -208,6 +208,23 @@ page 65114 "Inspección de Calidad_CAL_btc"
                     }
                 }
             }
+            group(ReturnQty)
+            {
+                Caption = 'Cantidades parciales a devolver', comment = 'ESP="Cantidades parciales a devolver"';
+
+                field(QtytoReturn; QtytoReturn)
+                {
+                    ApplicationArea = all;
+                }
+                field(InspeccionReturn; InspeccionReturn)
+                {
+                    ApplicationArea = all;
+                }
+                field("Cód. almacén destino"; "Cód. almacén destino")
+                {
+                    ApplicationArea = all;
+                }
+            }
             part(Control1000000056; "Líneas Inspección Cal_CAL_btc")
             {
                 Editable = bEditable;
@@ -493,6 +510,34 @@ page 65114 "Inspección de Calidad_CAL_btc"
                     CLEAR(funcCalidadV2);
                     funcCalidadV2.CrearNoConformidad(Rec);
                     //END FJAB 311019
+                end;
+            }
+            action("Crear Devolución parcial Inspección")
+            {
+                Image = Return;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = all;
+
+                trigger OnAction()
+                var
+                    funcCalidad: Codeunit "Cab Inspec Status Mgt_CAL_btc";
+                begin
+                    funcCalidad.DividirOrdenProd(Rec);
+                end;
+            }
+            action("Eliminar Inspección")
+            {
+                Image = DeleteQtyToHandle;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = all;
+
+                trigger OnAction()
+                var
+                    funcCalidad: Codeunit "Cab Inspec Status Mgt_CAL_btc";
+                begin
+                    funcCalidad.DeleteProdOrden(Rec);
                 end;
             }
         }

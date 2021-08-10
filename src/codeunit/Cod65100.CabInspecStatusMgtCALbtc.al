@@ -213,7 +213,8 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
                     ParWAL."Serial No." := ItemLedgerEntry."Serial No.";
                     ParWAL."Lot No." := ItemLedgerEntry."Lot No.";
                     ParWAL."Bin Code" := ItemLedgerEntry."Location Code";
-                    GenereacionInspAut.DiarioReclasificacion(TipoMtoDiario::Transfer, TODAY(), ParWAL, ABS(ItemLedgerEntry.Quantity), '', '', ProdOrder."Cód. almacén", ProdOrder."Cód. ubicación", '', ItemLedgerEntry."Entry No.", TRUE);
+                    GenereacionInspAut.DiarioReclasificacion(TipoMtoDiario::Transfer, TODAY(), ParWAL, ABS(ItemLedgerEntry."Remaining Quantity"), '', '', ProdOrder."Cód. almacén", ProdOrder."Cód. ubicación", '', ItemLedgerEntry."Entry No.", TRUE);
+                    // antes JJV GenereacionInspAut.DiarioReclasificacion(TipoMtoDiario::Transfer, TODAY(), ParWAL, ABS(ItemLedgerEntry.Quantity), '', '', ProdOrder."Cód. almacén", ProdOrder."Cód. ubicación", '', ItemLedgerEntry."Entry No.", TRUE);
                 end;
             END;
             //Error('PARADO');
@@ -444,5 +445,76 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
                 cabInp.Modify();
             end;
         end;
+    end;
+
+    procedure DeleteProdOrden(var ProdOrder: Record "Cab inspe eval_CAL_btc")
+    var
+    begin
+        ProdOrder.TestField("Estado inspección", ProdOrder."Estado inspección"::Certificada);
+        ItemLedgerEntry.Reset();
+        if ItemLedgerEntry.Get(ProdOrder.EntryNo) then begin
+            if ItemLedgerEntry."Remaining Quantity" = 0 then
+                if Confirm('¿Desea eliminar la inspección %1?', false, ProdOrder."No.") then
+                    ProdOrder.Delete();
+
+        end else
+            if Confirm('¿Desea eliminar la inspección %1?', false, ProdOrder."No.") then
+                ProdOrder.Delete();
+
+    end;
+
+    procedure DividirOrdenProd(var ProdOrder: Record "Cab inspe eval_CAL_btc")
+    var
+        NoInspeccion: code[20];
+    begin
+        ProdOrder.TestField("Estado inspección", ProdOrder."Estado inspección"::Certificada);
+        // comprobar cantidades a crear devolución
+        if (ProdOrder.QtytoReturn <= 0) or (ProdOrder.QtytoReturn >= ProdOrder."Cantidad Inspeccionada") then
+            error('Debe indicar una cantidad mayor que 0 y menor que %1 en "Cantidad a devolver"', ProdOrder."Cantidad Inspeccionada");
+
+
+        ItemLedgerEntry.Reset();
+        ItemLedgerEntry.SetRange(ItemLedgerEntry."Entry No.", ProdOrder.EntryNo);
+        if ItemLedgerEntry.FindFirst() then begin
+            if not Confirm('Se va crear nueva inspección de la Inspección %1 por la cantidad parcial %2', false, ProdOrder."No.", ProdOrder.QtytoReturn) then
+                exit;
+            // crear nueva inspeccion
+            NoInspeccion := CopiarInspeccion(ProdOrder);
+
+            // crear diario de reclasificación
+            ParWAL."Location Code" := ItemLedgerEntry."Location Code";
+            ParWAL."Item No." := ItemLedgerEntry."Item No.";
+            ParWAL."Serial No." := ItemLedgerEntry."Serial No.";
+            ParWAL."Lot No." := ItemLedgerEntry."Lot No.";
+            ParWAL."Bin Code" := ItemLedgerEntry."Location Code";
+            GenereacionInspAut.DiarioReclasificacion(TipoMtoDiario::Transfer, TODAY(), ParWAL, ABS(ProdOrder.QtytoReturn), '', NoInspeccion,
+                ItemLedgerEntry."Location Code", ItemLedgerEntry."Location Code", '', ItemLedgerEntry."Entry No.", TRUE);
+        end;
+
+    end;
+
+    local procedure CopiarInspeccion(var InspeccionOld: Record "Cab inspe eval_CAL_btc"): code[20]
+    var
+        Inspeccion: Record "Cab inspe eval_CAL_btc";
+        RecLinIns: Record "Lin inspe eval_CAL_btc";
+        RecLinInsOld: Record "Lin inspe eval_CAL_btc";
+    begin
+        Inspeccion := InspeccionOld;
+        Inspeccion."No." := '';
+        Inspeccion.EntryNo := 0;
+        Inspeccion."Cantidad Inspeccionada" := InspeccionOld.QtytoReturn;
+        Inspeccion.Insert(true);
+        //InspeccionOld."Cantidad Inspeccionada" := InspeccionOld."Cantidad Inspeccionada" - InspeccionOld.QtytoReturn;
+        //InspeccionOld.Modify();
+
+        RecLinInsOld.SetRange("No. inspección", InspeccionOld."No.");
+        if RecLinInsOld.findset() then
+            repeat
+                RecLinIns := RecLinInsOld;
+                RecLinIns."No. inspección" := Inspeccion."No.";
+                RecLinIns.Insert(true);
+            Until RecLinInsOld.next() = 0;
+        exit(Inspeccion."No.");
+
     end;
 }
