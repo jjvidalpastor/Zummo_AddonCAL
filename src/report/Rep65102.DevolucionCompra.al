@@ -2,7 +2,7 @@ report 65102 "Devolucion Compra"
 {
     RDLCLayout = './src/report/Rep65102.DevolucionCompra.rdl';
     DefaultLayout = RDLC;
-    Caption = 'Pedido Compra', Comment = 'ESP="Purchase Order"';
+    Caption = 'Purchase Return Order', Comment = 'ESP="Devolución de compra"';
     PreviewMode = PrintLayout;
     EnableHyperlinks = true;
     ApplicationArea = All;
@@ -12,9 +12,9 @@ report 65102 "Devolucion Compra"
     {
         dataitem("Purchase Header"; "Purchase Header")
         {
-            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
+            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = const("Return Order"));
             RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
-            RequestFilterHeading = 'Standard Purchase - Order';
+            RequestFilterHeading = 'Standard Purchase - Return Order', Comment = 'ESP="Devolución de compra"';
             column(PortesLbl; PortesLbl)
             {
             }
@@ -522,17 +522,100 @@ report 65102 "Devolucion Compra"
             column(DescuentoCabPurch; "Purchase Header"."Payment Discount %")
             {
             }
+            column(No_PurchLine_Lbl; NoPurchLineLbl)
+            {
+            }
+            column(Qty_PurchLine_Lbl; QtyPurchLineLbl)
+            {
+            }
+            column(PurchLineLineDisc_Lbl; PurchLineLineDiscCaptionLbl)
+            {
+            }
+            column(AmountCaptionLbl; AmountCaptionLbl)
+            {
+            }
             //SOTHIS EBR 040920 id 159231
-            column(logo; CompanyInfo.LogoCertificacion)
-            { }
+            /*column(logo; CompanyInfo.LogoCertificacion)
+            { }*/
             //fin SOTHIS EBR 040920 id 159231
+            // JJV cabecera no conformidad
+            dataitem("Cab no conformidad_CAL_btc"; "Cab no conformidad_CAL_btc")
+            {
+                DataItemLink = "No. inspección" = FIELD(No_inspection), "No. no conformidad" = FIELD(No_no_conformidad);
+                // DataItemTableView = sorting("No. inspección", "No. no conformidad");
+                column(NoInspeccionLbl; NoInspeccionLbl)
+                {
+
+                }
+                column("No__inspección"; "No. inspección")
+                {
+
+                }
+                column(NoConformidadesLbl; NoConformidadesLbl)
+                {
+
+                }
+                column(No__no_conformidad; "No. no conformidad")
+                {
+
+                }
+                column(No_doc_Origen_calidadLbl; No_doc_Origen_calidadLbl)
+                {
+
+                }
+                column("Nº_doc__Origen_calidad"; "Nº doc. Origen calidad")
+                {
+
+                }
+                column(EvaluaciónInspecciónLbl; EvaluaciónInspecciónLbl)
+                {
+
+                }
+                column("Evaluación_Inspección"; "Evaluación Inspección")
+                {
+
+                }
+                column(DescripcionLbl; DescripcionLbl)
+                {
+
+                }
+                column(Descripcion; Descripcion)
+                {
+
+                }
+                dataitem("Lin no conformidad_CAL_btc"; "Lin no conformidad_CAL_btc")
+                {
+                    DataItemLink = "No. inspección" = field("No. inspección"), "No. no conformidad" = field("No. no conformidad");
+                    DataItemTableView = SORTING("No. línea") WHERE("No. línea" = filter(<> 0));
+
+                    column(NoLineLbl; NoLíneaLbl)
+                    {
+
+                    }
+                    column(NoLine; "No. línea")
+                    {
+
+                    }
+                    column(DescriptionLine; "Descripción")
+                    {
+
+                    }
+                    column(InspeccionEvaluationValue; InspeccionEvaluationValue)
+                    {
+
+                    }
+                    column(EvaluaciónInspecciónLineasLbl; EvaluaciónInspecciónLbl)
+                    {
+
+                    }
+                }
+            }
+
             dataitem("Purchase Line"; "Purchase Line")
             {
                 DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
                 DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
-                column(AmountCaptionLbl; AmountCaptionLbl)
-                {
-                }
+
                 column(PurchLineLineDiscCaptionLbl; PurchLineLineDiscCaptionLbl)
                 {
                 }
@@ -593,21 +676,15 @@ report 65102 "Devolucion Compra"
                 column(DirectUniCost_Lbl; DirectUniCostCaptionLbl)
                 {
                 }
-                column(PurchLineLineDisc_Lbl; PurchLineLineDiscCaptionLbl)
-                {
-                }
+
                 column(VATDiscountAmount_Lbl; VATDiscountAmountCaptionLbl)
                 {
                 }
-                column(No_PurchLine_Lbl; FieldCaption("No."))
-                {
-                }
+
                 column(Desc_PurchLine_Lbl; FieldCaption(Description))
                 {
                 }
-                column(Qty_PurchLine_Lbl; FieldCaption(Quantity))
-                {
-                }
+
                 column(UOM_PurchLine_Lbl; ItemUnitOfMeasureCaptionLbl)
                 {
                 }
@@ -664,6 +741,8 @@ report 65102 "Devolucion Compra"
                     //CurrReport.NEWPAGE;
                 end;
             }
+            // JJV lineas de no conformidad
+
             dataitem(Totals; "Integer")
             {
                 DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
@@ -1009,7 +1088,7 @@ report 65102 "Devolucion Compra"
         CompanyInfo.CalcFields(Picture);
 
         //SOTHIS EBR 010920 id 15923
-        CompanyInfo.CalcFields(LogoCertificacion);
+        //CompanyInfo.CalcFields(LogoCertificacion);
         //fin SOTHIS EBR 010920 id 15923
     end;
 
@@ -1158,7 +1237,7 @@ report 65102 "Devolucion Compra"
         JobNoLbl: Label 'Job No.', Comment = 'ESP="Nº proyecto"';
         JobTaskNoLbl: Label 'Job Task No.', Comment = 'ESP="Nº tarea proyecto"';
         DuedateLbl: Label 'Due Date', Comment = 'ESP="Fecha vencimiento"';
-        PediProveeedorLbl: Label 'VENDOR ORDER', Comment = 'ESP="PEDIDO PROVEEDOR"';
+        PediProveeedorLbl: Label 'PURCHASE RETURN ORDER', Comment = 'ESP="DEVOLUCIÓN DE COMPRA"';
         PRCOMPRASLbl: Label 'OR-PURCHASE', Comment = 'ESP="PR-COMPRAS"';
         //ISOLbl: Label 'PO.01.DCP/A1.11', Comment = 'ESP="PO.01.DCP/A1.11"';
         ISOLbl: Label 'FO.04_C4.01_V12', Comment = 'ESP="FO.04_C4.01_V12"';
@@ -1171,6 +1250,15 @@ report 65102 "Devolucion Compra"
         ImporteBrutoLbl: Label 'Amount ', Comment = 'ESP="Importe"';
         Vendor: Record Vendor;
         PortesLbl: Label 'Freight', Comment = 'ESP="Portes"';
+        NoPurchLineLbl: Label 'No.', Comment = 'ESP="Núm."';
+        QtyPurchLineLbl: Label 'Quantity', Comment = 'ESP="Cantidad"';
+        NoConformidadesLbl: Label 'No. no conformity', Comment = 'ESP="No. no conformidades"';
+        NoInspeccionLbl: Label 'No. inspection', Comment = 'ESP="No. Inspección"';
+        No_doc_Origen_calidadLbl: Label 'No. quality doc origin', Comment = 'ESP="Nº Doc origen calidad"';
+        DescripcionLbl: Label 'Description', Comment = 'ESP="Descripción"';
+        EvaluaciónInspecciónLbl: Label 'Inspection evaluation', Comment = 'ESP="Evaluación inspección"';
+        NoLíneaLbl: Label 'No. Line', Comment = 'ESP="Núm. Línea"';
+        InspeccionEvaluationValue: Label 'Not conformity', Comment = 'ESP="No conforme"';
 
     [Scope('Personalization')]
     procedure InitializeRequest(LogInteractionParam: Boolean)
