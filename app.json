@@ -18,6 +18,9 @@
   "target": "Internal",
   "showMyCode": true,
   "runtime": "3.0",
+  "features": [
+      "TranslationFile"
+    ],
   "idRanges": [
     {
       "from": 65100,

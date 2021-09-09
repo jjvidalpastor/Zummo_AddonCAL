@@ -2,6 +2,22 @@ pageextension 65131 "PurchaseReturnOrder" extends "Purchase Return Order" //6640
 {
     layout
     {
+        addafter(General)
+        {
+            group(Calidad)
+            {
+                Caption = 'Calidad', comment = 'ESP="Calidad"';
+
+                field(No_inspection; No_inspection)
+                {
+                    ApplicationArea = all;
+                }
+                field(No_no_conformidad; No_no_conformidad)
+                {
+                    ApplicationArea = all;
+                }
+            }
+        }
     }
     actions
     {

@@ -621,7 +621,6 @@ table 65111 "Cab inspe eval_CAL_btc"
         }
         field(50001; QtytoReturn; Decimal)
         {
-            TableRelation = "Item Ledger Entry"."Entry No.";
             Caption = 'Cantidad a devolver', comment = 'ESP="Cantidad a devolver"';
         }
 
@@ -629,7 +628,7 @@ table 65111 "Cab inspe eval_CAL_btc"
         {
             Caption = 'Nº Inspección', comment = 'ESP="Nº Inspección"';
             Editable = false;
-            TableRelation = "Item Ledger Entry"."Entry No.";
+            TableRelation = "Cab inspe eval_CAL_btc"."No.";
         }
         field(50003; "Cód. almacén destino"; Code[10])
         {

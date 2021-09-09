@@ -214,16 +214,16 @@ report 65102 "Devolucion Compra"
             column(CurrRepPageNo; StrSubstNo(PageLbl, Format(CurrReport.PageNo)))
             {
             }
-            column(DocumentDate; Format("Document Date", 0, 4))
+            column(DocumentDate; "Document Date")
             {
             }
-            column(DueDate; Format("Due Date", 0, 4))
+            column(DueDate; "Due Date")
             {
             }
-            column(ExptRecptDt_PurchaseHeader; Format("Expected Receipt Date", 0, 4))
+            column(ExptRecptDt_PurchaseHeader; "Expected Receipt Date")
             {
             }
-            column(OrderDate_PurchaseHeader; Format("Order Date", 0, 4))
+            column(OrderDate_PurchaseHeader; "Order Date")
             {
             }
             column(VATNoText; VATNoText)

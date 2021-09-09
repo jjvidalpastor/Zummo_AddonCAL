@@ -523,6 +523,7 @@ page 65114 "Inspección de Calidad_CAL_btc"
                 var
                     funcCalidad: Codeunit "Cab Inspec Status Mgt_CAL_btc";
                 begin
+                    rec.TestField(InspeccionReturn, '');
                     funcCalidad.DividirOrdenProd(Rec);
                 end;
             }

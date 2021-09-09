@@ -573,6 +573,13 @@ table 65113 "Cab no conformidad_CAL_btc"
             Editable = false;
             TableRelation = "Item Ledger Entry"."Entry No.";
         }
+        FIELD(50001; "Purch. Return Order"; CODE[20])
+        {
+            Editable = false;
+            Caption = 'Devol. de compras', comment = 'ESP="Devol. de compras"';
+            TableRelation = "Purchase Header"."No." where("Document Type" = const("Return Order"));
+        }
+
     }
     keys
     {

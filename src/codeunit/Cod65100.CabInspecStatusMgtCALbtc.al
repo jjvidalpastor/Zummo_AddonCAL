@@ -534,4 +534,137 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         exit(Inspeccion."No.");
 
     end;
+
+    procedure CrearReturnOrderNoConformidad(var NoConformidad: Record "Cab no conformidad_CAL_btc")
+    var
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        // crearmos una devolucion de proveedor con los datos de la no conformidad y actualizamos datos
+        NoConformidad.TestField("Estado no conformidad", NoConformidad."Estado no conformidad"::Lanzada);
+        NoConformidad.TestField("Purch. Return Order", '');
+        NoConformidad.TestField("Acción inmediata", NoConformidad."Acción inmediata"::"Devolución a prov.");
+        NoConformidad.TestField("Cód. almacén destino");
+        NoConformidad.TestField("Cód. ubicación destino");
+
+        if not Confirm(lblConfirmReturnOrder, false, NoConformidad."Descripción proveedor", NoConformidad."No. no conformidad") then
+            exit;
+
+        CrearReturnOrderHeader(NoConformidad, PurchaseHeader);
+        NoConformidad."Purch. Return Order" := PurchaseHeader."No.";
+        NoConformidad."Accion inmediata realizada" := true;
+        NoConformidad."Fecha acción inmediata" := WorkDate();
+        NoConformidad.Modify();
+
+        CrearReturnOrderLine(NoConformidad, PurchaseHeader);
+
+    end;
+
+    local procedure CrearReturnOrderHeader(NoConformidad: Record "Cab no conformidad_CAL_btc"; var PurchaseHeader: Record "Purchase Header")
+    begin
+        PurchaseHeader.Init();
+        PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::"Return Order";
+        PurchaseHeader.Insert(true);
+        PurchaseHeader.validate("Buy-from Vendor No.", NoConformidad."No. proveedor");
+        PurchaseHeader.No_no_conformidad := NoConformidad."No. no conformidad";
+        PurchaseHeader.No_inspection := NoConformidad."No. inspección";
+        PurchaseHeader.Modify();
+    end;
+
+
+    local procedure CrearReturnOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
+    var
+        PurchaseLine: Record "Purchase Line";
+        PurchRcptHeader: Record "Purch. Rcpt. Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        LineNo: Integer;
+    begin
+        /* LineNo := 10000;
+         PurchaseLine.Init();
+         PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+         PurchaseLine."Document No." := PurchaseHeader."No.";
+         PurchaseLine."Line No." := LineNo;
+         PurchaseLine.Type := PurchaseLine.Type::" ";
+         PurchaseLine.Description := StrSubstNo(lblDesc1, NoConformidad."No. inspección", NoConformidad."No. no conformidad");
+         PurchaseLine.Insert();
+
+         case NoConformidad."Origen inspección" of
+             NoConformidad."Origen inspección"::"Lín. Albarán compra":
+                 Begin
+                     PurchRcptHeader.GET(NoConformidad."Nº doc. Origen calidad");
+                     if PurchRcptLine.GET(NoConformidad."Nº doc. Origen calidad", NoConformidad."Nº lín. doc. Origen calidad") then;
+                 End;
+         end;*/
+
+        LineNo += 10000;
+        PurchaseLine.Init();
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        PurchaseLine."Line No." := LineNo;
+        PurchaseLine.Type := PurchaseLine.Type::" ";
+        PurchaseLine.Description := StrSubstNo(lblDesc2, NoConformidad."Nº doc. Origen calidad", PurchRcptHeader."Vendor Shipment No.");
+        PurchaseLine.Insert();
+
+        LineNo += 10000;
+        PurchaseLine.Init();
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        PurchaseLine."Line No." := LineNo;
+        PurchaseLine.Type := PurchaseLine.Type::Item;
+        PurchaseLine.Validate("No.", NoConformidad."No. producto");
+        PurchaseLine.Validate(Quantity, NoConformidad."Cantidad Inspeccionada");
+        PurchaseLine.Validate("Direct Unit Cost", PurchRcptLine."Direct Unit Cost");
+        PurchaseLine.Insert();
+
+    end;
+
+    procedure DeleteReturnOrderNoConformidad(var NoConformidad: Record "Cab no conformidad_CAL_btc")
+    var
+        PurchaseHeader: Record "Purchase Header";
+        PurchaseLine: Record "Purchase Line";
+    begin
+        // crearmos una devolucion de proveedor con los datos de la no conformidad y actualizamos datos
+        NoConformidad.TestField("Estado no conformidad", NoConformidad."Estado no conformidad"::Lanzada);
+        NoConformidad.TestField("Purch. Return Order");
+        NoConformidad.TestField("Acción inmediata", NoConformidad."Acción inmediata"::"Devolución a prov.");
+
+        if not Confirm(lblConfirmDelReturnOrder, false, NoConformidad."No. no conformidad") then
+            exit;
+
+        PurchaseHeader.Get(PurchaseHeader."Document Type"::"Return Order", NoConformidad."Purch. Return Order");
+
+        if CheckReturnOrderSend(PurchaseHeader) then
+            error(lblErrorDelete);
+
+        PurchaseHeader.Delete(true);
+
+        NoConformidad."Purch. Return Order" := '';
+        NoConformidad."Accion inmediata realizada" := false;
+        NoConformidad."Fecha acción inmediata" := 0D;
+        NoConformidad.Modify();
+
+    end;
+
+
+    local procedure CheckReturnOrderSend(PurchaseHeader: Record "Purchase Header"): Boolean
+    var
+        PurchaseLine: Record "Purchase Line";
+    begin
+        //  comprobamos si ha se ha enviado a proveedor alguna linea y entonces no se puede eliminar
+        PurchaseLine.SetRange("Document Type", PurchaseHeader."Document Type");
+        PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
+        if PurchaseLine.findset() then
+            repeat
+                if PurchaseLine."Qty. to Receive (Base)" <> 0 then
+                    exit(true);
+            Until PurchaseLine.next() = 0;
+    end;
+
+    var
+
+        lblConfirmReturnOrder: Label 'Se va a crear una devolución de compra a %1 de la No Conformidad %2\¿Desea continuar?', comment = 'ESP="Se va a crear una devolución de compra a %1 de la No Conformidad %2\¿Desea continuar?"';
+        lblConfirmDelReturnOrder: Label 'Se va a eliminar la devolución de compra %1 si no se ha realizado ninguna devolución\¿Desea continuar?'
+            , comment = 'ESP="Se va a eliminar la devolución de compra %1 si no se ha realizado ninguna devolución\¿Desea continuar?"';
+        lblErrorDelete: Label 'No se puede eliminar la devolución de compra porque tiene líneas ya enviadas', comment = 'ESP="No se puede eliminar la devolución de compra porque tiene líneas ya enviadas"';
+        lblDesc1: Label 'Nº incidencia: %1, Nº No Conformidad %2', comment = 'ESP="Nº incidencia: %1, Nº No Conformidad %2"';
+        lblDesc2: Label 'Nº Alb. compra: %1, Nº Albarán proveedor %2', comment = 'ESP="Nº Alb. compra: %1, Nº Albarán proveedor %2"';
 }

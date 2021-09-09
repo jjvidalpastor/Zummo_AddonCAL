@@ -88,6 +88,10 @@ page 65117 "No Conformidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Purch. Return Order"; "Purch. Return Order")
+                {
+                    ApplicationArea = all;
+                }
                 field("Accion inmediata realizada"; "Accion inmediata realizada")
                 {
                     ApplicationArea = All;
@@ -424,12 +428,40 @@ page 65117 "No Conformidad_CAL_btc"
         {
             action("Change &Status")
             {
-                Caption = 'Change &Status';
+                Caption = 'Change &Status', Comment = 'ESP="Cambiar Estado"';
                 Image = ChangeStatus;
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Codeunit "Cab No Conf Status Mgt_CAL_BTC";
                 ApplicationArea = All;
+            }
+            action(MakeDevolution)
+            {
+                Caption = 'Crear Devol. Compra', comment = 'ESP="Crear Devol. Compra"';
+                Image = ReturnOrder;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    funcCalidad: Codeunit "Cab Inspec Status Mgt_CAL_btc";
+                begin
+                    funcCalidad.CrearReturnOrderNoConformidad(Rec);
+                end;
+            }
+            action(DeleteDevolution)
+            {
+                Caption = 'Eliminar Devol. Compra', comment = 'ESP="Eliminar Devol. Compra"';
+                Image = DeleteRow;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    funcCalidad: Codeunit "Cab Inspec Status Mgt_CAL_btc";
+                begin
+                    funcCalidad.DeleteReturnOrderNoConformidad(Rec);
+                end;
             }
         }
     }
