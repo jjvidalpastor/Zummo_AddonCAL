@@ -2446,7 +2446,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Fields!Descripcion.Value</Value>
+                      <Value>=Fields!PedidoCompra.Value</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -2586,7 +2586,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!DescripcionLbl.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!PedCompralbl.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -4454,6 +4454,15 @@ FAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRC
         </Field>
         <Field Name="Descripcion">
           <DataField>Descripcion</DataField>
+        </Field>
+        <Field Name="Observaciones_no_conformidad">
+          <DataField>Observaciones_no_conformidad</DataField>
+        </Field>
+        <Field Name="PedCompralbl">
+          <DataField>PedCompralbl</DataField>
+        </Field>
+        <Field Name="PedidoCompra">
+          <DataField>PedidoCompra</DataField>
         </Field>
         <Field Name="NoLineLbl">
           <DataField>NoLineLbl</DataField>

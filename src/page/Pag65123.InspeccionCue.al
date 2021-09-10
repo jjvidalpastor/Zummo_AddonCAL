@@ -135,6 +135,20 @@ page 65123 "InspeccionCue"
                     ApplicationArea = All;
                 }
             }
+            cuegroup("Devoluciones Proveedor")
+            {
+                Caption = 'Devoluciones proveedor', comment = 'ESP="Devoluciones proveedor"';
+                field(DevolCompra; DevolCompra)
+                {
+                    ApplicationArea = all;
+                    DrillDownPageId = "Purchase Return Order List";
+                }
+                field(HistEnvioDevolCompra; HistEnvioDevolCompra)
+                {
+                    ApplicationArea = all;
+                    DrillDownPageId = "Posted Return Shipments";
+                }
+            }
             cuegroup(Empleado)
             {
                 Visible = false;

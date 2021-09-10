@@ -1101,6 +1101,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Calidad Cue - Field CompOrdenProduccionTerminada - Property Caption</note>
           <target>Componente orden de producciónterminada</target>
         </trans-unit>
+        <trans-unit id="Table 2587421519 - Field 627881466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Return Order</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Devoluciones de compra"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calidad Cue - Field DevolCompra - Property Caption</note>
+          <target>Devoluciones de compra</target>
+        </trans-unit>
         <trans-unit id="Table 2587421519 - Field 1675356734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee certificate</source>
           <note from="Developer" annotates="general" priority="2">ESP="Empleado certificada"</note>
@@ -1134,6 +1140,12 @@
           <source>filtroAlmacenNoConf</source>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Calidad Cue - Field filtroAlmacenNoConf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2587421519 - Field 1091818333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Return Shipment</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Hist. envío Devolución de compra"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Calidad Cue - Field HistEnvioDevolCompra - Property Caption</note>
+          <target>Hist. envío Devolución de compra</target>
         </trans-unit>
         <trans-unit id="Table 2587421519 - Field 301542743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item LedgerEntry certificate</source>
@@ -3197,6 +3209,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Cab Inspec Status Mgt_CAL_btc - NamedType Text000Msg</note>
           <target>%2 %3 con estado %1 ha sido cambiada a %5 %6 con estado %4.</target>
         </trans-unit>
+        <trans-unit id="Codeunit 935298477 - Method 3902787170 - NamedType 4135671033" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No se puede crear la Devolución si el estado de No conformidad es %1 o %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="No se puede crear la Devolución si el estado de No conformidad es %1 o %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Cab Inspec Status Mgt_CAL_btc - Method CrearReturnOrderNoConformidad - NamedType lblErr</note>
+          <target>No se puede crear la Devolución si el estado de No conformidad es %1 o %2</target>
+        </trans-unit>
         <trans-unit id="Codeunit 935298477 - Method 1665861916 - NamedType 3538026951" size-unit="char" translate="yes" xml:space="preserve">
           <source>Debe rellenar el campo Resultado condición, para las líneas que afectan a conformidad.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Debe rellenar el campo Resultado condición, para las líneas que afectan a conformidad."</note>
@@ -3514,6 +3532,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Actividad inspección calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page InspeccionCue - Property Caption</note>
           <target>Actividad inspección calidad</target>
+        </trans-unit>
+        <trans-unit id="Page 663033022 - Control 2131137538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Devoluciones proveedor</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Devoluciones proveedor"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page InspeccionCue - Control Devoluciones Proveedor - Property Caption</note>
+          <target>Devoluciones proveedor</target>
         </trans-unit>
         <trans-unit id="Page 663033022 - Control 2923387052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purch. Rcpt. Line Inspection</source>
@@ -4067,6 +4091,12 @@
           <note from="Developer" annotates="general" priority="2">ESP="Términos pago"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Devolucion Compra - NamedType PaymentTermsDescCaptionLbl</note>
           <target>Términos pago</target>
+        </trans-unit>
+        <trans-unit id="Report 3220567556 - NamedType 1569808699" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nº Ped. Compra</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Ped. Compra"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Devolucion Compra - NamedType PedCompralbl</note>
+          <target>Nº Ped. Compra</target>
         </trans-unit>
         <trans-unit id="Report 3220567556 - NamedType 821750255" size-unit="char" translate="yes" xml:space="preserve">
           <source>PURCHASE RETURN ORDER</source>

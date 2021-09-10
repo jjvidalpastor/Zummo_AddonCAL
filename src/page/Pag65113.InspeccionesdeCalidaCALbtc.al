@@ -203,6 +203,11 @@ page 65113 "Inspecciones de Calida_CAL_btc"
                     ApplicationArea = All;
                     Visible = false;
                 }
+                field("Observaciones inspección"; "Observaciones inspección")
+                {
+                    ApplicationArea = all;
+                    Visible = false;
+                }
             }
         }
         area(factboxes)

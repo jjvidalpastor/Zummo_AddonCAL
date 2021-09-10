@@ -235,7 +235,7 @@ table 65111 "Cab inspe eval_CAL_btc"
         {
             Caption = 'Fecha recepcion';
         }
-        field(34; "Observaciones inspección"; Text[50])
+        field(34; "Observaciones inspección"; Text[250])
         {
             Caption = 'Observaciones inspeccion';
         }

@@ -275,6 +275,18 @@ table 65116 "Calidad Cue"
             FieldClass = FlowField;
             CalcFormula = Count("Cab no conformidad_CAL_btc" WHERE("Estado no conformidad" = FILTER(Certificada)));
         }
+        field(50001; DevolCompra; Integer)
+        {
+            Caption = 'Purchase Return Order', Comment = 'ESP="Devoluciones de compra"';
+            FieldClass = FlowField;
+            CalcFormula = Count("Purchase Header" WHERE("Document Type" = FILTER("Return Order"), "Completely Received" = const(false)));
+        }
+        field(50002; HistEnvioDevolCompra; Integer)
+        {
+            Caption = 'Posted Return Shipment', Comment = 'ESP="Hist. envío Devolución de compra"';
+            FieldClass = FlowField;
+            CalcFormula = Count("Return Shipment Header");
+        }
     }
     keys
     {

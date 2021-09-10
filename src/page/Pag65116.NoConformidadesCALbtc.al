@@ -138,6 +138,10 @@ page 65116 "No Conformidades_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Observaciones no conformidad"; "Observaciones no conformidad")
+                {
+                    ApplicationArea = all;
+                }
             }
         }
         area(factboxes)
@@ -205,6 +209,26 @@ page 65116 "No Conformidades_CAL_btc"
                     RecNoConform.SetRange("No. no conformidad", "No. no conformidad");
                     REPORT.RunModal(REPORT::"Informe No Conformidad_CAL_BTC", true, false, RecNoConform);
                 end;
+            }
+            action("Imprimir Devolución")
+            {
+                ApplicationArea = all;
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    PurchaseHeader: Record "Purchase Header";
+                begin
+                    rec.TestField("Purch. Return Order");
+                    PurchaseHeader.Reset();
+                    PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::"Return Order");
+                    PurchaseHeader.SetRange("No.", Rec."Purch. Return Order");
+                    REPORT.RunModal(REPORT::"Devolucion Compra", true, false, PurchaseHeader);
+                end;
+
             }
         }
     }

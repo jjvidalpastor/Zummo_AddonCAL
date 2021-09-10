@@ -100,6 +100,10 @@ page 65117 "No Conformidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Observaciones no conformidad"; "Observaciones no conformidad")
+                {
+                    ApplicationArea = All;
+                }
             }
             group("Inspección")
             {
@@ -136,10 +140,10 @@ page 65117 "No Conformidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
-                field("Observaciones no conformidad"; "Observaciones no conformidad")
+                /*field("Observaciones no conformidad"; "Observaciones no conformidad")
                 {
                     ApplicationArea = All;
-                }
+                }*/
                 group(Control1000000036)
                 {
                     ShowCaption = false;
@@ -462,6 +466,29 @@ page 65117 "No Conformidad_CAL_btc"
                 begin
                     funcCalidad.DeleteReturnOrderNoConformidad(Rec);
                 end;
+            }
+        }
+        area(Reporting)
+        {
+            action("Imprimir Devolución")
+            {
+                ApplicationArea = all;
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Report;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    PurchaseHeader: Record "Purchase Header";
+                begin
+                    rec.TestField("Purch. Return Order");
+                    PurchaseHeader.Reset();
+                    PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::"Return Order");
+                    PurchaseHeader.SetRange("No.", Rec."Purch. Return Order");
+                    REPORT.RunModal(REPORT::"Devolucion Compra", true, false, PurchaseHeader);
+                end;
+
             }
         }
     }

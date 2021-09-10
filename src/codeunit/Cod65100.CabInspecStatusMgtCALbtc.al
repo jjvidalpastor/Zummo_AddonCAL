@@ -538,9 +538,11 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
     procedure CrearReturnOrderNoConformidad(var NoConformidad: Record "Cab no conformidad_CAL_btc")
     var
         PurchaseHeader: Record "Purchase Header";
+        lblErr: Label 'No se puede crear la Devolución si el estado de No conformidad es %1 o %2', comment = 'ESP="No se puede crear la Devolución si el estado de No conformidad es %1 o %2"';
     begin
         // crearmos una devolucion de proveedor con los datos de la no conformidad y actualizamos datos
-        NoConformidad.TestField("Estado no conformidad", NoConformidad."Estado no conformidad"::Lanzada);
+        if NoConformidad."Estado no conformidad" in [NoConformidad."Estado no conformidad"::Abierta, NoConformidad."Estado no conformidad"::Certificada] then
+            Error(lblErr, NoConformidad."Estado no conformidad"::Abierta, NoConformidad."Estado no conformidad"::Certificada);
         NoConformidad.TestField("Purch. Return Order", '');
         NoConformidad.TestField("Acción inmediata", NoConformidad."Acción inmediata"::"Devolución a prov.");
         NoConformidad.TestField("Cód. almacén destino");

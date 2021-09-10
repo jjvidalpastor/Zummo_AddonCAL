@@ -583,6 +583,14 @@ report 65102 "Devolucion Compra"
                 {
 
                 }
+                column(Observaciones_no_conformidad; "Observaciones no conformidad")
+                {
+
+                }
+                column(PedCompralbl; PedCompralbl)
+                { }
+                column(PedidoCompra; PurchRcptHeader."Order No.")
+                { }
                 dataitem("Lin no conformidad_CAL_btc"; "Lin no conformidad_CAL_btc")
                 {
                     DataItemLink = "No. inspección" = field("No. inspección"), "No. no conformidad" = field("No. no conformidad");
@@ -596,7 +604,7 @@ report 65102 "Devolucion Compra"
                     {
 
                     }
-                    column(DescriptionLine; "Descripción")
+                    column(DescriptionLine; "Observaciones causas") // "Descripción")
                     {
 
                     }
@@ -609,6 +617,13 @@ report 65102 "Devolucion Compra"
 
                     }
                 }
+
+                trigger OnAfterGetRecord()
+                begin
+                    if not PurchRcptHeader.GET("Nº doc. Origen calidad") then
+                        clear(PurchRcptHeader);
+
+                end;
             }
 
             dataitem("Purchase Line"; "Purchase Line")
@@ -1165,6 +1180,7 @@ report 65102 "Devolucion Compra"
         Language: Record Language;
         CurrExchRate: Record "Currency Exchange Rate";
         PurchSetup: Record "Purchases & Payables Setup";
+        PurchRcptHeader: Record "Purch. Rcpt. Header";
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         PurchPost: Codeunit "Purch.-Post";
@@ -1259,6 +1275,7 @@ report 65102 "Devolucion Compra"
         EvaluaciónInspecciónLbl: Label 'Inspection evaluation', Comment = 'ESP="Evaluación inspección"';
         NoLíneaLbl: Label 'No. Line', Comment = 'ESP="Núm. Línea"';
         InspeccionEvaluationValue: Label 'Not conformity', Comment = 'ESP="No conforme"';
+        PedCompralbl: Label 'Nº Ped. Compra', comment = 'ESP="Nº Ped. Compra"';
 
     [Scope('Personalization')]
     procedure InitializeRequest(LogInteractionParam: Boolean)

@@ -123,7 +123,7 @@ page 65114 "Inspección de Calidad_CAL_btc"
                 field("Observaciones inspección"; "Observaciones inspección")
                 {
                     ApplicationArea = All;
-                    Visible = false;
+                    //Visible = false;
                 }
                 field("Fecha fabricación"; "Fecha fabricación")
                 {
