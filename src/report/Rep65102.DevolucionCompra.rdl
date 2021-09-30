@@ -223,31 +223,14 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox7</rd:DefaultName>
                           <ZIndex>10</ZIndex>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
                             <BackgroundColor>#f9741c</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -282,6 +265,9 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
                           <ZIndex>9</ZIndex>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -321,6 +307,9 @@
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
                           <ZIndex>8</ZIndex>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -588,6 +577,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>UOM_PurchLine</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -626,6 +618,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>LineDisc_PurchLineFormat</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -662,6 +657,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>LineAmt_PurchLineFormat</rd:DefaultName>
+                          <Visibility>
+                            <Hidden>=iif(Fields!Valorado.Value, false,true)</Hidden>
+                          </Visibility>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -3894,6 +3892,9 @@ FAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRCFAAAgFRC
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="Valorado">
+          <DataField>Valorado</DataField>
+        </Field>
         <Field Name="PortesLbl">
           <DataField>PortesLbl</DataField>
         </Field>

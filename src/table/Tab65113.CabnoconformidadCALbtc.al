@@ -573,11 +573,27 @@ table 65113 "Cab no conformidad_CAL_btc"
             Editable = false;
             TableRelation = "Item Ledger Entry"."Entry No.";
         }
-        field(50005; "Purch. Return Order"; CODE[20])
+        field(50005; "Purch. Return Order"; code[20])
         {
             Editable = false;
             Caption = 'Devol. de compras', comment = 'ESP="Devol. de compras"';
             TableRelation = "Purchase Header"."No." where("Document Type" = const("Return Order"));
+        }
+        field(50006; "Pdte. Enviar Devol."; Boolean)
+        {
+            FieldClass = FlowField;
+            CalcFormula = exist("Purchase Line" where("Document Type" = const(Order), "Document No." = field("Purch. Return Order"), "Outstanding Quantity" = filter(> 0)));
+            Editable = false;
+            Caption = 'Pdte. Enviar Devol.', comment = 'ESP="Pdte. Enviar Devol."';
+        }
+        field(50007; "Con Reposicion"; Boolean)
+        {
+            Caption = 'Con Reposición', comment = 'ESP="Con Reposición"';
+
+            trigger OnValidate()
+            begin
+                TestField("Purch. Return Order", '');
+            end;
         }
     }
     keys

@@ -15,6 +15,8 @@ report 65102 "Devolucion Compra"
             DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = const("Return Order"));
             RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
             RequestFilterHeading = 'Standard Purchase - Return Order', Comment = 'ESP="Devolución de compra"';
+
+            column(Valorado; Valorado) { }
             column(PortesLbl; PortesLbl)
             {
             }
@@ -1071,6 +1073,11 @@ report 65102 "Devolucion Compra"
                         ApplicationArea = All;
                         Caption = 'Language', comment = 'ESP="Idioma"';
                     }
+                    field(Valorado; Valorado)
+                    {
+                        ApplicationArea = all;
+                        Caption = 'Valorado', comment = 'ESP="Valorado"';
+                    }
                 }
             }
         }
@@ -1125,6 +1132,7 @@ report 65102 "Devolucion Compra"
     end;
 
     var
+        Valorado: Boolean;
         optIdioma: Option " ","ENU","ESP","FRA";
         PageLbl: Label 'Page %1', Comment = '%1 = Page No.';
         VATAmountSpecificationLbl: Label 'VAT Amount Specification in ', Comment = 'ESP="Especificación importe IVA en "';

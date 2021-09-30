@@ -569,6 +569,7 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseHeader.validate("Buy-from Vendor No.", NoConformidad."No. proveedor");
         PurchaseHeader.No_no_conformidad := NoConformidad."No. no conformidad";
         PurchaseHeader.No_inspection := NoConformidad."No. inspección";
+        PurchaseHeader."Location Code" := NoConformidad."Cód. almacén destino";
         PurchaseHeader.Modify();
     end;
 
@@ -613,9 +614,13 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseLine."Line No." := LineNo;
         PurchaseLine.Type := PurchaseLine.Type::Item;
         PurchaseLine.Validate("No.", NoConformidad."No. producto");
+        PurchaseLine."Location Code" := NoConformidad."Cód. almacén destino";
         PurchaseLine.Validate(Quantity, NoConformidad."Cantidad Inspeccionada");
         PurchaseLine.Validate("Direct Unit Cost", PurchRcptLine."Direct Unit Cost");
         PurchaseLine.Insert();
+
+        PurchaseLine.Validate("Return Qty. to Ship", PurchaseLine.Quantity);
+        PurchaseLine.Modify();
 
     end;
 

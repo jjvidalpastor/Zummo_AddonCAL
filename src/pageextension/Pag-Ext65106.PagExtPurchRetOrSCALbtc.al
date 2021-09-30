@@ -79,7 +79,49 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
                         funcCalidad.CrearInspeccionLinPedidoCompra(Rec);
                     end;
                 }
+                action(CrearReposicion)
+                {
+                    ApplicationArea = all;
+                    Caption = 'Reposición Líneas', comment = 'ESP="Reposición Líneas"';
+                    Image = ReturnReceipt;
+
+                    trigger OnAction()
+                    begin
+                        CrearReposicion();
+                    end;
+                }
             }
         }
     }
+
+    var
+        PurchLine: Record "Purchase Line";
+        PurchLine2: Record "Purchase Line";
+        lblMsg: Label 'Se va a realizar la/s linea/s de reposición. \¿Desea continuar?', comment = 'Se va a realizar la/s linea/s de reposición. \¿Desea continuar?';
+
+    local procedure CrearReposicion()
+    Var
+        Linea: Integer;
+    begin
+        if not Confirm(lblMsg, false) then
+            exit;
+        PurchLine2.Reset();
+        PurchLine2.SetRange("Document Type", Rec."Document Type");
+        PurchLine2.SetRange("Document No.", Rec."Document No.");
+        if PurchLine2.FindLast() then
+            Linea := PurchLine2."Line No." + 10000
+        else
+            Linea := 10000;
+
+        CurrPage.SetSelectionFilter(PurchLine);
+        if PurchLine.findset() then
+            repeat
+                PurchLine2.Init();
+                PurchLine2.TransferFields(PurchLine);
+                PurchLine2."Line No." := Linea;
+                PurchLine2.Validate(Quantity, -PurchLine.Quantity);
+                PurchLine2.Insert();
+                Linea += 10000;
+            Until PurchLine.next() = 0;
+    end;
 }

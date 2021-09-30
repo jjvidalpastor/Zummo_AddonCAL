@@ -80,6 +80,10 @@ page 65117 "No Conformidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Con Reposicion"; "Con Reposicion")
+                {
+                    ApplicationArea = all;
+                }
                 field("Cód. almacén destino"; "Cód. almacén destino")
                 {
                     ApplicationArea = All;
@@ -103,6 +107,10 @@ page 65117 "No Conformidad_CAL_btc"
                 field("Observaciones no conformidad"; "Observaciones no conformidad")
                 {
                     ApplicationArea = All;
+                }
+                field("Pdte. Enviar Devol."; "Pdte. Enviar Devol.")
+                {
+                    ApplicationArea = all;
                 }
             }
             group("Inspección")
