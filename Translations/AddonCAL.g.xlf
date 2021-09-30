@@ -3203,6 +3203,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType InspSinLineasMsg</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3340231565 - NamedType 2490298515" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Se va a crear un pedido de compra de Reposición. ¿Desea Continuar?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Se va a crear un pedido de compra de Reposición. ¿Desea Continuar?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType lblConfirmReposicion</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3340231565 - NamedType 1345325546" size-unit="char" translate="yes" xml:space="preserve">
           <source>No Conformidad %1 creada</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4543,16 +4548,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtLotNoInf_CAL_btc - Control Origen - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 3248116967 - NamedType 2654048973" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 3248116967">
-          <source>Se va a realizar la/s linea/s de reposición. \¿Desea continuar?</source>
-          <note from="Developer" annotates="general" priority="2">Se va a realizar la/s linea/s de reposición. \¿Desea continuar?</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtPurchRetOrS_CAL_btc - NamedType lblMsg</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 3248116967 - Action 904310370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2937746743">
-          <source>Reposición Líneas</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Reposición Líneas"</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PagExtPurchRetOrS_CAL_btc - Action CrearReposicion - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 226289389 - Control 4097999298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3698582500">
           <source>Calidad Avanzada</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4577,6 +4572,11 @@
           <source>See Nonconformities</source>
           <note from="Developer" annotates="general" priority="2">ESP="Ver No conformidades"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ProdOrderComponents - Action No conformidad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2293466993 - Action 904310370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
+          <source>Crear Reposición</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear Reposición"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseReturnOrder - Action CrearReposicion - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2293466993 - Action 2038292200 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>It allows to revert Nonconformity lines</source>
@@ -4647,6 +4647,16 @@
           <source>Pdte recibir/enviar</source>
           <note from="Developer" annotates="general" priority="2">ESP="Pdte recibir/enviar"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension STH_Purchase_Header_Ext - Field Pdte recibir/enviar - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1077228855 - Field 3358616709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Ped. Compra reposición</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Ped. Compra reposición"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension STH_Purchase_Header_Ext - Field PurchOrderReposicion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1077228855 - Field 1207265655 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
+          <source>Dev. Compra reposición</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Dev. Compra reposición"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension STH_Purchase_Header_Ext - Field ReturnOrderReposicion - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4120638835 - Field 3037545994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Activar gestion de la calidad</source>

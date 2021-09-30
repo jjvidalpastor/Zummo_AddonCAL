@@ -26,6 +26,9 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
         PopUp: Boolean;
         OnlyVisualControl: Boolean;
         NoInsertar: Boolean;
+
+        lblConfirmReposicion: Label 'Se va a crear un pedido de compra de Reposición. ¿Desea Continuar?', comment = 'ESP="Se va a crear un pedido de compra de Reposición. ¿Desea Continuar?"';
+
     //TODO: Se ha comentado todo el código de las funciones que generan inspecciones por cada tipo de origen:
     //CrearInspeccionLinPedidoCompra
     //CrearInspeccionMovProducto
@@ -2120,5 +2123,58 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
                     LotNoInformation.Validate(Description, Item.Description);
                     LotNoInformation.Insert(true);
                 end;
+    end;
+
+    procedure CrearReposicionDevCompra(var Rec: record "Purchase Header")
+    var
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        if not Confirm(lblConfirmReposicion) then
+            exit;
+
+        // vamos a crear la cabecera del pedido de compra en base a la cabecera de dev. compra
+        Rec.TestField(No_inspection);
+        Rec.TestField(No_no_conformidad);
+
+        PurchaseHeader.Init();
+        PurchaseHeader.TransferFields(Rec);
+        PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::"Order";
+        PurchaseHeader.ReturnOrderReposicion := Rec."No.";
+        PurchaseHeader.Insert();
+
+        CrearLineasReposicionDevCompra(Rec, PurchaseHeader);
+
+    end;
+
+    procedure CrearLineasReposicionDevCompra(ReturnOrder: record "Purchase Header"; PurchOrder: record "Purchase Header")
+    var
+        PurchaseLine: Record "Purchase Line";
+        PurchaseLine2: Record "Purchase Line";
+    begin
+        PurchaseLine.SetRange("Document Type", ReturnOrder."Document Type");
+        PurchaseLine.SetRange("Document No.", ReturnOrder."No.");
+        if PurchaseLine.findset() then
+            repeat
+                PurchaseLine2.Init();
+                PurchaseLine2."Document Type" := PurchOrder."Document Type";
+                PurchaseLine2."Document No." := PurchOrder."No.";
+                PurchaseLine2."Line No." := PurchaseLine."Line No.";
+                case PurchaseLine.Type of
+                    PurchaseLine2.Type::" ":
+                        begin
+                            PurchaseLine2.Type := PurchaseLine.Type::" ";
+                            PurchaseLine2.Description := PurchaseLine.Description;
+                        end;
+                    else begin
+                            PurchaseLine2.Type := PurchaseLine.Type;
+                            PurchaseLine2.Validate("No.", PurchaseLine."No.");
+                            PurchaseLine2."Location Code" := 'MMPP';
+                            PurchaseLine2.Validate(Quantity, PurchaseLine.Quantity);
+                        end;
+                end;
+
+                PurchaseLine2.Insert();
+
+            Until PurchaseLine.next() = 0;
     end;
 }

@@ -56,6 +56,20 @@ pageextension 65131 "PurchaseReturnOrder" extends "Purchase Return Order" //6640
                         exit;
                 end;
             }
+            action(CrearReposicion)
+            {
+                ApplicationArea = all;
+                Caption = 'Crear Reposición', comment = 'ESP="Crear Reposición"';
+                Image = MakeOrder;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    CrearReposicionDevCompra();
+                end;
+
+            }
         }
     }
 }
