@@ -27,6 +27,7 @@ pageextension 65123 "PagExtSalesRetOrdSu_CAL_btc" extends "Sales Return Order Su
                     PromotedCategory = Process;
                     RunObject = Page "Inspecciones de Calida_CAL_btc";
                     ApplicationArea = All;
+                    Visible = false;
 
                     //TODO: Revisar filtro
                     /*
@@ -64,6 +65,7 @@ pageextension 65123 "PagExtSalesRetOrdSu_CAL_btc" extends "Sales Return Order Su
                     Promoted = true;
                     PromotedCategory = New;
                     ApplicationArea = All;
+                    Visible = false;
 
                     trigger OnAction()
                     var

@@ -578,6 +578,16 @@ table 65113 "Cab no conformidad_CAL_btc"
             Editable = false;
             Caption = 'Devol. de compras', comment = 'ESP="Devol. de compras"';
             TableRelation = "Purchase Header"."No." where("Document Type" = const("Return Order"));
+
+            trigger OnLookup()
+            var
+                PurchaseHeader: Record "Purchase Header";
+                PurchaseReturnOrderList: Page "Purchase Return Order List";
+            begin
+                PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::Order);
+                PurchaseHeader.SetRange("No.", Rec."Purch. Return Order");
+                PurchaseReturnOrderList.RunModal();
+            end;
         }
         field(50006; "Pdte. Enviar Devol."; Boolean)
         {

@@ -9,8 +9,7 @@ report 65101 "Informe No Conformidad_CAL_BTC"
 
     dataset
     {
-        dataitem("Cab. inspección/eval. calidad";
-        "Cab no conformidad_CAL_btc")
+        dataitem("Cab. inspección/eval. calidad"; "Cab no conformidad_CAL_btc")
         {
             //BEGIN FJAB 311019 Cambio campos
             /*

@@ -273,7 +273,7 @@ table 65116 "Calidad Cue"
         {
             Caption = 'Inspection non-conformity finished ', Comment = 'ESP="Inspección terminada no conformidad"';
             FieldClass = FlowField;
-            CalcFormula = Count("Cab no conformidad_CAL_btc" WHERE("Estado no conformidad" = FILTER(Certificada)));
+            CalcFormula = Count("Cab no conformidad_CAL_btc" WHERE("Estado no conformidad" = FILTER(Terminada)));
         }
         field(50001; DevolCompra; Integer)
         {

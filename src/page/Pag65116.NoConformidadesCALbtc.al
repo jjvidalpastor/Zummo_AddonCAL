@@ -118,6 +118,10 @@ page 65116 "No Conformidades_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Purch. Return Order"; "Purch. Return Order")
+                {
+                    ApplicationArea = all;
+                }
                 field("No. de muestra laboratorio"; "No. de muestra laboratorio")
                 {
                     ApplicationArea = All;
