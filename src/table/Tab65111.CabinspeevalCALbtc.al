@@ -349,28 +349,28 @@ table 65111 "Cab inspe eval_CAL_btc"
             Editable = false;
             FieldClass = FlowField;
         }
-        field(47; "Descripción almacén"; Text[50])
+        field(47; "Descripción almacén"; Text[100])
         {
             CalcFormula = Lookup(Location.Name WHERE(Code = FIELD("Cód. almacén")));
             Caption = 'Descripcion almacen';
             Editable = false;
             FieldClass = FlowField;
         }
-        field(48; "Descripción ubicación"; Text[50])
+        field(48; "Descripción ubicación"; Text[100])
         {
             CalcFormula = Lookup(Bin.Description WHERE("Location Code" = FIELD("Cód. almacén"), Code = FIELD("Cód. ubicación")));
             Caption = 'Descripcion ubicacion';
             Editable = false;
             FieldClass = FlowField;
         }
-        field(49; "Descripción proveedor"; Text[50])
+        field(49; "Descripción proveedor"; Text[100])
         {
             CalcFormula = Lookup(Vendor.Name WHERE("No." = FIELD("No. proveedor")));
             Caption = 'Descripcion proveedor';
             Editable = false;
             FieldClass = FlowField;
         }
-        field(50; "Descripción cliente"; Text[50])
+        field(50; "Descripción cliente"; Text[100])
         {
             CalcFormula = Lookup(Customer.Name WHERE("No." = FIELD("No. cliente")));
             Caption = 'Descripcion cliente';
