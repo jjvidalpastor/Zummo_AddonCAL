@@ -574,29 +574,19 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
     end;
 
 
-    local procedure CrearReturnOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
+    procedure CrearReturnOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
     var
         PurchaseLine: Record "Purchase Line";
         PurchRcptHeader: Record "Purch. Rcpt. Header";
         PurchRcptLine: Record "Purch. Rcpt. Line";
         LineNo: Integer;
     begin
-        /* LineNo := 10000;
-         PurchaseLine.Init();
-         PurchaseLine."Document Type" := PurchaseHeader."Document Type";
-         PurchaseLine."Document No." := PurchaseHeader."No.";
-         PurchaseLine."Line No." := LineNo;
-         PurchaseLine.Type := PurchaseLine.Type::" ";
-         PurchaseLine.Description := StrSubstNo(lblDesc1, NoConformidad."No. inspección", NoConformidad."No. no conformidad");
-         PurchaseLine.Insert();
-
-         case NoConformidad."Origen inspección" of
-             NoConformidad."Origen inspección"::"Lín. Albarán compra":
-                 Begin
-                     PurchRcptHeader.GET(NoConformidad."Nº doc. Origen calidad");
-                     if PurchRcptLine.GET(NoConformidad."Nº doc. Origen calidad", NoConformidad."Nº lín. doc. Origen calidad") then;
-                 End;
-         end;*/
+        PurchaseLine.Reset();
+        PurchaseLine.SetCurrentKey("Document Type", "Document No.", "Line No.");
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        if PurchaseLine.FindLast() then
+            LineNo := PurchaseLine."Line No.";
 
         LineNo += 10000;
         PurchaseLine.Init();
@@ -617,6 +607,10 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseLine."Location Code" := NoConformidad."Cód. almacén destino";
         PurchaseLine.Validate(Quantity, NoConformidad."Cantidad Inspeccionada");
         PurchaseLine.Validate("Direct Unit Cost", PurchRcptLine."Direct Unit Cost");
+        PurchaseLine.InspeccionDeCalidadCAL_BTC := true;
+        PurchaseLine.NoConformidadCAL_BTC := true;
+        PurchaseLine.NumInspeccion_btc := NoConformidad."No. inspección";
+        PurchaseLine.NumNoConformidad_btc := NoConformidad."No. no conformidad";
         PurchaseLine.Insert();
 
         PurchaseLine.Validate("Return Qty. to Ship", PurchaseLine.Quantity);
