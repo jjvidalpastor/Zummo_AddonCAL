@@ -21,6 +21,24 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         end;
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnAfterDeleteEvent', '', true, true)]
+    local procedure PurchaseLine_OnAfterDeleteEvent(var Rec: Record "Purchase Line"; RunTrigger: Boolean)
+    var
+        CabNoConformidad: Record "Cab no conformidad_CAL_btc";
+    begin
+        if Rec.IsTemporary then
+            exit;
+        if Rec.NumInspeccion_btc <> '' then begin
+
+            if CabNoConformidad.Get(Rec.NumInspeccion_btc, Rec.NumNoConformidad_btc) then begin
+                CabNoConformidad."Purch. Return Order" := '';
+                CabNoConformidad."Accion inmediata realizada" := false;
+                CabNoConformidad."Fecha acción inmediata" := 0D;
+                CabNoConformidad.Modify();
+            end;
+        end
+    end;
+
     var
         ToProdOrder: Record "Production Order";
         RecLins: Record "Lin inspe eval_CAL_btc";
@@ -134,7 +152,7 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
             RecLins.SetRange("No. inspección", ProdOrder."No.");
             if RecLins.FindSet() then
                 repeat
-                    ContaPuntos := ContaPuntos + RecLins.Puntos;
+                        ContaPuntos := ContaPuntos + RecLins.Puntos;
                     if RecLins.Defecto = true then begin
                         boolContaDefect := true;
                         if RecLins."Clase defecto" = RecLins."Clase defecto"::A then ContaDefectoA := ContaDefectoA + 1;
@@ -274,10 +292,10 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         //RecLins.SetRange("Origen inspección", ProdOrder."Origen inspección");
         RecLins.SetRange("No. inspección", ProdOrder."No.");
         if RecLins.FindSet() then
-            repeat
-                RecLins.Validate("Estado inspección", NewStatus);
-                RecLins.Modify(true);
-            until RecLins.Next() = 0
+                repeat
+                    RecLins.Validate("Estado inspección", NewStatus);
+                    RecLins.Modify(true);
+                until RecLins.Next() = 0
         else
             Message('Atención: Inspección de Calidad sin líneas');
         Inspeccion := ProdOrder;
@@ -526,11 +544,11 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
 
         RecLinInsOld.SetRange("No. inspección", InspeccionOld."No.");
         if RecLinInsOld.findset() then
-            repeat
-                RecLinIns := RecLinInsOld;
-                RecLinIns."No. inspección" := Inspeccion."No.";
-                RecLinIns.Insert(true);
-            Until RecLinInsOld.next() = 0;
+                repeat
+                    RecLinIns := RecLinInsOld;
+                    RecLinIns."No. inspección" := Inspeccion."No.";
+                    RecLinIns.Insert(true);
+                Until RecLinInsOld.next() = 0;
         exit(Inspeccion."No.");
 
     end;
@@ -538,13 +556,16 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
     procedure CrearReturnOrderNoConformidad(var NoConformidad: Record "Cab no conformidad_CAL_btc")
     var
         PurchaseHeader: Record "Purchase Header";
+        PurchaseHeaderRepos: Record "Purchase Header";
         lblErr: Label 'No se puede crear la Devolución si el estado de No conformidad es %1 o %2', comment = 'ESP="No se puede crear la Devolución si el estado de No conformidad es %1 o %2"';
+        lblAccion: label 'Para crear una devolución el estado de la No Conformidad debe ser %1 o %2, no %3';
     begin
         // crearmos una devolucion de proveedor con los datos de la no conformidad y actualizamos datos
         if NoConformidad."Estado no conformidad" in [NoConformidad."Estado no conformidad"::Abierta, NoConformidad."Estado no conformidad"::Certificada] then
             Error(lblErr, NoConformidad."Estado no conformidad"::Abierta, NoConformidad."Estado no conformidad"::Certificada);
-        NoConformidad.TestField("Purch. Return Order", '');
-        NoConformidad.TestField("Acción inmediata", NoConformidad."Acción inmediata"::"Devolución a prov.");
+        //NoConformidad.TestField("Purch. Return Order", '');
+        if not (NoConformidad."Acción inmediata" in [NoConformidad."Acción inmediata"::"Devolución a prov.", NoConformidad."Acción inmediata"::"Dev. Reposicion a prov."]) then
+            error(lblAccion, NoConformidad."Acción inmediata"::"Devolución a prov.", NoConformidad."Acción inmediata"::"Dev. Reposicion a prov.", NoConformidad."Acción inmediata");
         NoConformidad.TestField("Cód. almacén destino");
         NoConformidad.TestField("Cód. ubicación destino");
 
@@ -558,6 +579,12 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         NoConformidad.Modify();
 
         CrearReturnOrderLine(NoConformidad, PurchaseHeader);
+
+        if NoConformidad."Acción inmediata" in [NoConformidad."Acción inmediata"::"Dev. Reposicion a prov."] then begin
+            CrearReposicionOrderHeader(NoConformidad, PurchaseHeaderRepos);
+
+            CrearReposicionOrderLine(NoConformidad, PurchaseHeaderRepos);
+        end;
 
     end;
 
@@ -575,6 +602,63 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
 
 
     procedure CrearReturnOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
+    var
+        PurchaseLine: Record "Purchase Line";
+        PurchRcptHeader: Record "Purch. Rcpt. Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        LineNo: Integer;
+    begin
+        PurchaseLine.Reset();
+        PurchaseLine.SetCurrentKey("Document Type", "Document No.", "Line No.");
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        if PurchaseLine.FindLast() then
+            LineNo := PurchaseLine."Line No.";
+
+        LineNo += 10000;
+        PurchaseLine.Init();
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        PurchaseLine."Line No." := LineNo;
+        PurchaseLine.Type := PurchaseLine.Type::" ";
+        PurchaseLine.Description := StrSubstNo(lblDesc2, NoConformidad."Nº doc. Origen calidad", PurchRcptHeader."Vendor Shipment No.");
+        PurchaseLine.Insert();
+
+        LineNo += 10000;
+        PurchaseLine.Init();
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := PurchaseHeader."No.";
+        PurchaseLine."Line No." := LineNo;
+        PurchaseLine.Type := PurchaseLine.Type::Item;
+        PurchaseLine.Validate("No.", NoConformidad."No. producto");
+        PurchaseLine."Location Code" := NoConformidad."Cód. almacén destino";
+        PurchaseLine.Validate(Quantity, NoConformidad."Cantidad Inspeccionada");
+        PurchaseLine.Validate("Direct Unit Cost", PurchRcptLine."Direct Unit Cost");
+        PurchaseLine.InspeccionDeCalidadCAL_BTC := true;
+        PurchaseLine.NoConformidadCAL_BTC := true;
+        PurchaseLine.NumInspeccion_btc := NoConformidad."No. inspección";
+        PurchaseLine.NumNoConformidad_btc := NoConformidad."No. no conformidad";
+        PurchaseLine.Insert();
+
+        PurchaseLine.Validate("Return Qty. to Ship", PurchaseLine.Quantity);
+        PurchaseLine.Modify();
+
+    end;
+
+    local procedure CrearReposicionOrderHeader(NoConformidad: Record "Cab no conformidad_CAL_btc"; var PurchaseHeader: Record "Purchase Header")
+    begin
+        PurchaseHeader.Init();
+        PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::"Order";
+        PurchaseHeader.Insert(true);
+        PurchaseHeader.validate("Buy-from Vendor No.", NoConformidad."No. proveedor");
+        PurchaseHeader.No_no_conformidad := NoConformidad."No. no conformidad";
+        PurchaseHeader.No_inspection := NoConformidad."No. inspección";
+        PurchaseHeader."Location Code" := NoConformidad."Cód. almacén destino";
+        PurchaseHeader.Modify();
+    end;
+
+
+    procedure CrearReposicionOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
     var
         PurchaseLine: Record "Purchase Line";
         PurchRcptHeader: Record "Purch. Rcpt. Header";
@@ -655,8 +739,8 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseLine.SetRange("Document No.", PurchaseHeader."No.");
         if PurchaseLine.findset() then
             repeat
-                if PurchaseLine."Qty. to Receive (Base)" <> 0 then
-                    exit(true);
+                    if PurchaseLine."Qty. to Receive (Base)" <> 0 then
+                        exit(true);
             Until PurchaseLine.next() = 0;
     end;
 

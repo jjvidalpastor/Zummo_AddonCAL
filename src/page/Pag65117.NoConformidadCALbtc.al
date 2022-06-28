@@ -74,16 +74,13 @@ page 65117 "No Conformidad_CAL_btc"
             }
             group("Acción")
             {
-                Editable = bEditable;
+                //Editable = bEditable;
 
                 field("Acción inmediata"; "Acción inmediata")
                 {
                     ApplicationArea = All;
                 }
-                field("Con Reposicion"; "Con Reposicion")
-                {
-                    ApplicationArea = all;
-                }
+
                 field("Cód. almacén destino"; "Cód. almacén destino")
                 {
                     ApplicationArea = All;

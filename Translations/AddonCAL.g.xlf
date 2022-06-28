@@ -3138,6 +3138,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="No se puede crear la Devolución si el estado de No conformidad es %1 o %2"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Cab Inspec Status Mgt_CAL_btc - Method CrearReturnOrderNoConformidad - NamedType lblErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 935298477 - Method 3902787170 - NamedType 2618752693" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Para crear una devolución el estado de la No Conformidad debe ser %1 o %2, no %3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Cab Inspec Status Mgt_CAL_btc - Method CrearReturnOrderNoConformidad - NamedType lblAccion</note>
+        </trans-unit>
         <trans-unit id="Codeunit 935298477 - Method 1665861916 - NamedType 3538026951" size-unit="char" translate="yes" xml:space="preserve">
           <source>Debe rellenar el campo Resultado condición, para las líneas que afectan a conformidad.</source>
           <note from="Developer" annotates="general" priority="2">ESP="Debe rellenar el campo Resultado condición, para las líneas que afectan a conformidad."</note>

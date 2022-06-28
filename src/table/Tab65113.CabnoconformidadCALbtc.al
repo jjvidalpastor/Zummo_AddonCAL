@@ -382,7 +382,7 @@ table 65113 "Cab no conformidad_CAL_btc"
         field(58; "Acción inmediata"; Option)
         {
             Caption = 'Accion inmediata';
-            OptionMembers = " ",Cuarentena,"No conformes","Devolución a prov.","Prod. a reclasificar","Prod. a reprocesar","Prod. a reciclar","Prod. a desechar";
+            OptionMembers = " ",Cuarentena,"No conformes","Devolución a prov.","Prod. a reclasificar","Prod. a reprocesar","Prod. a reciclar","Prod. a desechar","Dev. Reposicion a prov.";
         }
         field(59; "Cód. almacén destino"; Code[10])
         {

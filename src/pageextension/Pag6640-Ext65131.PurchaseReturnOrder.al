@@ -1,15 +1,6 @@
 pageextension 65131 "PurchaseReturnOrder" extends "Purchase Return Order" //6640
 {
-    layout
-    {
-        addafter(General)
-        {
-            field("Pendiente recibir/enviar"; "Pdte recibir/enviar")
-            {
-                ApplicationArea = all;
-            }
-        }
-    }
+
     actions
     {
         addafter(GetPostedDocumentLinesToReverse)

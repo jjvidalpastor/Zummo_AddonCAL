@@ -11,6 +11,7 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
             field(NumInspeccion_btc; NumInspeccion_btc)
             {
                 ApplicationArea = all;
+                Visible = false;
             }
             field(NumNoConformidad_btc; NumNoConformidad_btc)
             {
@@ -98,8 +99,10 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
         CabNoconformidad: record "Cab no conformidad_CAL_btc";
         NoconformidadCal: page "No Conformidades_CAL_btc";
     begin
+
         PurchaseHeader.get(Rec."Document Type", Rec."Document No.");
         CabNoconformidad.SetRange("No. proveedor", PurchaseHeader."Buy-from Vendor No.");
+        CabNoconformidad.setFilter("Acción inmediata", '%1|%2', CabNoconformidad."Acción inmediata"::"Devolución a prov.", CabNoconformidad."Acción inmediata"::"Dev. Reposicion a prov.");
         NoconformidadCal.SetTableView(CabNoconformidad);
         NoconformidadCal.LookupMode := true;
         if NoconformidadCal.RunModal() = Action::LookupOK then begin

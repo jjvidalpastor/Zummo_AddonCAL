@@ -2,6 +2,18 @@ pageextension 65126 "PagExtPurchOrSub_CAL_btc" extends "Purchase Order Subform"
 {
     layout
     {
+        addafter(Description)
+        {
+            field(NumInspeccion_btc; NumInspeccion_btc)
+            {
+                ApplicationArea = all;
+                Visible = false;
+            }
+            field(NumNoConformidad_btc; NumNoConformidad_btc)
+            {
+                ApplicationArea = all;
+            }
+        }
         addafter("Bin Code")
         {
             field(InspeccionDeCalidadCAL_BTC; InspeccionDeCalidadCAL_BTC)

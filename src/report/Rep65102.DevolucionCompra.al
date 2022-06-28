@@ -1127,9 +1127,9 @@ report 65102 "Devolucion Compra"
         if LogInteraction and not IsReportInPreviewMode then
             if "Purchase Header".FindSet then
                 repeat
-                    SegManagement.LogDocument(
-                      13, "Purchase Header"."No.", 0, 0, DATABASE::Vendor, "Purchase Header"."Buy-from Vendor No.",
-                      "Purchase Header"."Purchaser Code", '', "Purchase Header"."Posting Description", '');
+                        SegManagement.LogDocument(
+                          13, "Purchase Header"."No.", 0, 0, DATABASE::Vendor, "Purchase Header"."Buy-from Vendor No.",
+                          "Purchase Header"."Purchaser Code", '', "Purchase Header"."Posting Description", '');
                 until "Purchase Header".Next = 0;
     end;
 
