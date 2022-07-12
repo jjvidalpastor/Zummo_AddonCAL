@@ -120,6 +120,17 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
             CabNoconformidad.Modify();
 
             FuntionsCal.CrearReturnOrderLine(CabNoconformidad, PurchaseHeader);
+
+            if CabNoconformidad."Acción inmediata" in [CabNoconformidad."Acción inmediata"::"Dev. Reposicion a prov."] then begin
+                FuntionsCal.CrearReposicionOrderHeader(CabNoconformidad, PurchaseHeader);
+
+                FuntionsCal.CrearReposicionOrderLine(CabNoconformidad, PurchaseHeader);
+
+                CabNoconformidad."Purch. Order" := PurchaseHeader."No.";
+                CabNoconformidad.Modify();
+
+
+            end;
         end;
     end;
 

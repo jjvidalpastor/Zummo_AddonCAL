@@ -584,8 +584,9 @@ table 65113 "Cab no conformidad_CAL_btc"
                 PurchaseHeader: Record "Purchase Header";
                 PurchaseReturnOrderList: Page "Purchase Return Order List";
             begin
-                PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::Order);
+                PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::"Return Order");
                 PurchaseHeader.SetRange("No.", Rec."Purch. Return Order");
+                PurchaseHeader.SetRange(No_no_conformidad, Rec."No. no conformidad");
                 PurchaseReturnOrderList.RunModal();
             end;
         }
@@ -603,6 +604,23 @@ table 65113 "Cab no conformidad_CAL_btc"
             trigger OnValidate()
             begin
                 TestField("Purch. Return Order", '');
+            end;
+        }
+        field(50008; "Purch. Order"; code[20])
+        {
+            Editable = false;
+            Caption = 'Pedido de compras', comment = 'ESP="Pedido de compras"';
+            TableRelation = "Purchase Header"."No." where("Document Type" = const("Order"));
+
+            trigger OnLookup()
+            var
+                PurchaseHeader: Record "Purchase Header";
+                PurchaseReturnOrderList: Page "Purchase Order List";
+            begin
+                PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::Order);
+                PurchaseHeader.SetRange("No.", Rec."Purch. Order");
+                PurchaseHeader.SetRange(No_no_conformidad, Rec."No. no conformidad");
+                PurchaseReturnOrderList.RunModal();
             end;
         }
     }

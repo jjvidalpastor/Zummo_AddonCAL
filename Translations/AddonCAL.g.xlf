@@ -958,6 +958,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Cab no conformidad_CAL_btc - Field Proveedor de la muestra - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1021483322 - Field 2955911856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pedido de compras</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Pedido de compras"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Cab no conformidad_CAL_btc - Field Purch. Order - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1021483322 - Field 2978753346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Devol. de compras</source>
           <note from="Developer" annotates="general" priority="2">ESP="Devol. de compras"</note>
@@ -4588,6 +4593,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Ver No conformidades"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ProdOrderComponents - Action No conformidad - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2928747931 - Control 2131137538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2928747931">
+          <source>Devoluciones proveedor</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Devoluciones proveedor"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Purchase Agent Activities - Control Devoluciones Proveedor - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2293466993 - Action 904310370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>Crear Reposición</source>
           <note from="Developer" annotates="general" priority="2">ESP="Crear Reposición"</note>
@@ -4602,6 +4612,21 @@
           <source>Reverse lines Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Revertir líneas No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension PurchaseReturnOrder - Action RevertirNoConformidad - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3630819116 - Field 627881466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3630819116">
+          <source>Purchase Return Order</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Devoluciones de compra"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Cue - Field DevolCompra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3630819116 - Field 3985042051 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3630819116">
+          <source>Posted CR Memo Invoice</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Hist. Abono de compra"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Cue - Field HistAbonoCompra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3630819116 - Field 1091818333 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3630819116">
+          <source>Pending Posted Return Shipment</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Hist. envío Devolución de compra pdtes."</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Purchase Cue - Field HistEnvioDevolCompra - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4261530561 - Field 1438830135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2809873457">
           <source>No. inspection quality</source>
@@ -4642,6 +4667,11 @@
           <source>No. Nonconformity</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nº No conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension PurchRcptLine - Field NumNoConformidad_btc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1721347679 - Field 801412466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1721347679">
+          <source>Is Completly Invoiced</source>
+          <note from="Developer" annotates="general" priority="2">ES==Completamente facturado</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Return Shipment Header - Field Is Completly Invoiced - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1077228855 - Field 2011193956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2072992664">
           <source>No. inspection</source>

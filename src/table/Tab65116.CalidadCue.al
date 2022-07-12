@@ -285,7 +285,7 @@ table 65116 "Calidad Cue"
         {
             Caption = 'Posted Return Shipment', Comment = 'ESP="Hist. envío Devolución de compra"';
             FieldClass = FlowField;
-            CalcFormula = Count("Return Shipment Header");
+            CalcFormula = Count("Return Shipment Header" where("Is Completly Invoiced" = const(false)));
         }
     }
     keys

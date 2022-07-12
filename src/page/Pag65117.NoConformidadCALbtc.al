@@ -93,6 +93,10 @@ page 65117 "No Conformidad_CAL_btc"
                 {
                     ApplicationArea = all;
                 }
+                field("Purch. Order"; "Purch. Order")
+                {
+                    ApplicationArea = all;
+                }
                 field("Accion inmediata realizada"; "Accion inmediata realizada")
                 {
                     ApplicationArea = All;
