@@ -3648,10 +3648,10 @@
           <note from="Developer" annotates="general" priority="2">ESP="Actividad inspección no conformidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page NoConformidadCue - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3050040650 - Control 2347438355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3050040650 - Control 3267586256 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>AddonProduccion</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page NoConformidadCue - Control 1 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page NoConformidadCue - Control AddonProduccion - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3050040650 - Control 502212023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inpección No conformidad</source>
@@ -3720,8 +3720,73 @@
         </trans-unit>
         <trans-unit id="Page 2150149270 - Control 1532816877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numbering</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">ESP="Nº Series"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Setup Calidad_CAL_btc - Control Numbering - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Ledger No conforme</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Movs. Producto No conforme"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 486908828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Document No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Entry No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Entry No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 149522872 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Entry Type field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Entry Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 1527563463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the External Document No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control External Document No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Item No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 2367056265 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Remaining Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 1882905478 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Source No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 1753214751 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control Source Type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 34717358 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control SourceName - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Control 34717358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2">ES="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control SourceName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3220567556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Return Order</source>
@@ -4753,10 +4818,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field DatetimeRegistroCAL_BTC - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2957556811 - Field 3924461300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Default Vendor Name</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre proveedor defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field Default Vendor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2957556811 - Field 645271276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Default Vendor No.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. proveedor defecto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field Default Vendor No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2957556811 - Field 2619110645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field InspeccionCalidadCAL_BTC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2957556811 - Field 2103435214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>No. no conformidad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field No. no conformidad - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2957556811 - Field 2369483403 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>No conformidad</source>

@@ -33,6 +33,10 @@ page 65100 "Setup Calidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Cód. almacén no conformes"; "Cód. almacén no conformes")
+                {
+                    ApplicationArea = All;
+                }
                 field("Journal Template Name"; "Journal Template Name") //BTC FSD 04.02.2020 Creo este campo, para no hardcodear el diario.
                 {
                     ApplicationArea = All;
@@ -89,7 +93,7 @@ page 65100 "Setup Calidad_CAL_btc"
             }
             group(Numbering)
             {
-                Caption = 'Numbering';
+                Caption = 'Numbering', Comment = 'ESP="Nº Series"';
 
                 field("No. serie insp. recepcion"; "No. serie insp. recepcion")
                 {
@@ -162,10 +166,10 @@ page 65100 "Setup Calidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
-                field("Cód. almacén no conformes"; "Cód. almacén no conformes")
-                {
-                    ApplicationArea = All;
-                }
+                // field("Cód. almacén no conformes"; "Cód. almacén no conformes")
+                // {
+                //     ApplicationArea = All;
+                // }
                 field("Cód. almacén devolución a prov"; "Cód. almacén devolución a prov")
                 {
                     ApplicationArea = All;

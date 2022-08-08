@@ -42,22 +42,37 @@ page 65134 "NoConformidadCue"
                 field(MovProdAlmNoConf; MovProdAlmNoConf)
                 {
                     ApplicationArea = All;
+
+                    trigger OnDrillDown()
+                    var
+                        ItemLedgerEntry: Record "Item Ledger Entry";
+                    begin
+                        ConfCal.get();
+                        ItemLedgerEntry.FilterGroup := 2;
+                        ItemLedgerEntry.SetFilter("Location Code", ConfCal."Cód. almacén no conformes");
+                        ItemLedgerEntry.SetRange(Open, true);
+                        ItemLedgerEntry.FilterGroup := 0;
+                        page.run(65135, ItemLedgerEntry);
+                    end;
                 }
-                field("1"; MovProdAlmNoConf)
+                field("AddonProduccion"; 0)
                 {
                     Caption = 'AddonProduccion';
 
                     trigger OnDrillDown()
                     begin
-                        page.run(50405)
+                        page.run(50405);
                     end;
                 }
             }
         }
     }
-    trigger OnOpenPage()
+
     var
         ConfCal: Record "Setup Calidad_CAL_btc";
+
+    trigger OnOpenPage()
+
     begin
         RESET();
         if not get() then begin
@@ -67,7 +82,7 @@ page 65134 "NoConformidadCue"
         ConfCal.get();
         FilterGroup(2);
         SetFilter(filtroAlmacenInspe, '=%1', ConfCal.AlmacenInpeccion);
-        SetFilter(filtroAlmacenNoConf, '=%1', 'NOCONFORME'); //FSD No me gusta que este hardcodeado!
+        SetFilter(filtroAlmacenNoConf, '=%1', ConfCal."Cód. almacén no conformes");
         FilterGroup(0);
     end;
 }
