@@ -23,6 +23,10 @@ page 65135 "STH Item Ledger No conforme"
                 {
                     ApplicationArea = all;
                 }
+                field("Posting Date"; "Posting Date")
+                {
+                    ApplicationArea = all;
+                }
                 field("Document No."; "Document No.")
                 {
                     ApplicationArea = NONE;
@@ -114,10 +118,32 @@ page 65135 "STH Item Ledger No conforme"
         }
     }
 
+    actions
+    {
+        area(Processing)
+        {
+            action(CreateJnlLineAdjust)
+            {
+                ApplicationArea = All;
+                Caption = 'Crear Diario', comment = 'ESP="Crear diario"';
+                Image = OpenJournal;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                begin
+                    CreateJnlLineAdjustNeg;
+                end;
+            }
+        }
+    }
+
     var
         Vendor: Record Vendor;
         Customer: Record Customer;
         SourceName: text;
+        lblConfirm: Label '¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?', comment = 'ESP="¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?"';
 
     trigger OnAfterGetRecord()
     begin
@@ -134,5 +160,18 @@ page 65135 "STH Item Ledger No conforme"
                         SourceName := Customer.Name;
                 end;
         end;
+    end;
+
+    local procedure CreateJnlLineAdjustNeg()
+    var
+        CALMgtFunction: Codeunit "Calidad Mgt_CAL_BTC";
+        ItemLedgerEntry: Record "Item Ledger Entry";
+    begin
+        // Función que a todos los registros seleccionados 
+        // Creara el diario de productos con ajuste negativo, con misma cantidad pendiente y coste por unidad.
+        CurrPage.SetSelectionFilter(ItemLedgerEntry);
+        if Confirm(lblConfirm, false, ItemLedgerEntry.Count) then
+            CALMgtFunction.CreateJnlLineAdjustNeg(ItemLedgerEntry);
+
     end;
 }

@@ -2923,10 +2923,20 @@
           <note from="Developer" annotates="general" priority="2">ESP="Nombre sección diario"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Batch Name - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2150149270 - Field 1848523943 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name No conforme</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre sección diario No conforme"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Batch No conforme - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2150149270 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Template Name</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nombre libro diario"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Template Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2150149270 - Field 3216476219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name No conforme</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre libro diario No conforme"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Template No conforme - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2150149270 - Field 2570073304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cab Series No. Inspection</source>
@@ -3728,6 +3738,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Movs. Producto No conforme"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1083390673 - NamedType 2981352172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - NamedType lblConfirm</note>
+        </trans-unit>
         <trans-unit id="Page 1083390673 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Description field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3787,6 +3802,11 @@
           <source>Name</source>
           <note from="Developer" annotates="general" priority="2">ES="Nombre"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control SourceName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3549123145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Crear Diario</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear diario"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateJnlLineAdjust - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3220567556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Return Order</source>

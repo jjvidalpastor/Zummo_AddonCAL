@@ -45,6 +45,14 @@ page 65100 "Setup Calidad_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Journal Template No conforme"; "Journal Template No conforme")
+                {
+                    ApplicationArea = all;
+                }
+                field("Journal Batch No conforme"; "Journal Batch No conforme")
+                {
+                    ApplicationArea = all;
+                }
             }
             group(Plantillas)
             {

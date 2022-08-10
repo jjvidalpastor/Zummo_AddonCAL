@@ -351,6 +351,16 @@ table 65100 "Setup Calidad_CAL_btc"
             Caption = 'Journal Batch Name', Comment = 'ESP="Nombre sección diario"';
             TableRelation = "Item Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template Name"));
         }
+        field(50060; "Journal Template No conforme"; code[10])
+        {
+            Caption = 'Journal Template Name No conforme', Comment = 'ESP="Nombre libro diario No conforme"';
+            TableRelation = "Item Journal Template";
+        }
+        field(50061; "Journal Batch No conforme"; code[10])
+        {
+            Caption = 'Journal Batch Name No conforme', Comment = 'ESP="Nombre sección diario No conforme"';
+            TableRelation = "Item Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template No conforme"));
+        }
     }
     keys
     {

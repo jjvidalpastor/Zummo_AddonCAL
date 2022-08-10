@@ -2177,4 +2177,75 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
 
             Until PurchaseLine.next() = 0;
     end;
+
+    procedure CreateJnlLineAdjustNeg(var ItemLedgerEntry: Record "Item Ledger Entry")
+    var
+        ItemJnlLine: record "Item Journal Line";
+    begin
+        // Función que a todos los registros seleccionados 
+        // Creara el diario de productos con ajuste negativo, con misma cantidad pendiente y coste por unidad.        
+        InitItemJnl;
+        if ItemLedgerEntry.findset() then
+            repeat
+                ItemJnlLine.Init();
+                InitItemJnlLine(ItemJnlLine);
+                ItemJnlLine.validate("Item No.", ItemLedgerEntry."Item No.");
+                ItemJnlLine.validate("Variant Code", ItemLedgerEntry."Variant Code");
+                ItemJnlLine.validate("Location Code", ItemLedgerEntry."Location Code");
+                ItemJnlLine.validate(Quantity, ItemLedgerEntry."Remaining Quantity");
+                ItemJnlLine.validate("Applies-to Entry", ItemLedgerEntry."Entry No.");
+                ItemJnlLine.Modify();
+            Until ItemLedgerEntry.next() = 0;
+
+        if ItemJnlLine.Count > 0 then begin
+            Commit();
+            ItemJnlLine.SetRange("Journal Template Name", ItemJnlLine."Journal Template Name");
+            ItemJnlLine.SetRange("Journal Batch Name", ItemJnlLine."Journal Batch Name");
+            Page.RunModal(PAGE::"Item Journal", ItemJnlLine);
+        end;
+
+    end;
+
+    local procedure InitItemJnl()
+    var
+        CALSetup: record "Setup Calidad_CAL_btc";
+        ItemJnlLine2: record "Item Journal Line";
+    begin
+        CALSetup.Get();
+        CALSetup.TestField("Journal Template No conforme");
+        CALSetup.TestField("Journal Batch No conforme");
+        ItemJnlLine2.SetRange("Journal Template Name", CALSetup."Journal Template No conforme");
+        ItemJnlLine2.SetRange("Journal Batch Name", CALSetup."Journal Batch No conforme");
+        ItemJnlLine2.DeleteAll();
+
+    end;
+
+    local procedure InitItemJnlLine(var ItemJnlLine: record "Item Journal Line")
+    var
+        CALSetup: record "Setup Calidad_CAL_btc";
+        ItemJnlBatch: Record "Item Journal Batch";
+        ItemJnlLine2: record "Item Journal Line";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+    begin
+        CALSetup.Get();
+        CALSetup.TestField("Journal Template No conforme");
+        CALSetup.TestField("Journal Batch No conforme");
+
+        ItemJnlLine."Journal Template Name" := CALSetup."Journal Template No conforme";
+        ItemJnlLine."Journal Batch Name" := CALSetup."Journal Batch No conforme";
+        ItemJnlLine2.SetRange("Journal Template Name", CALSetup."Journal Template No conforme");
+        ItemJnlLine2.SetRange("Journal Batch Name", CALSetup."Journal Batch No conforme");
+        if ItemJnlLine2.FindLast() then
+            ItemJnlLine."Line No." := ItemJnlLine2."Line No." + 10000
+        else
+            ItemJnlLine."Line No." := 10000;
+        ItemJnlLine.validate("Posting Date", WorkDate());
+        ItemJnlBatch.Get(ItemJnlLine."Journal Template Name", ItemJnlLine."Journal Batch Name");
+        CLEAR(NoSeriesMgt);
+        ItemJnlLine."Document No." := NoSeriesMgt.GetNextNo(ItemJnlBatch."No. Series", ItemJnlLine."Posting Date", FALSE);
+        ItemJnlLine.validate("Entry Type", ItemJnlLine."Entry Type"::"Negative Adjmt.");
+
+        ItemJnlLine.Insert(true);
+
+    end;
 }
