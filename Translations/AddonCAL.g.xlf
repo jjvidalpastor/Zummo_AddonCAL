@@ -3733,6 +3733,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Nº Series"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Setup Calidad_CAL_btc - Control Numbering - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1083390673 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Process,Report,Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Property PromotedActionCategories</note>
+        </trans-unit>
         <trans-unit id="Page 1083390673 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Ledger No conforme</source>
           <note from="Developer" annotates="general" priority="2">ESP="Movs. Producto No conforme"</note>
@@ -3803,10 +3808,100 @@
           <note from="Developer" annotates="general" priority="2">ES="Nombre"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Control SourceName - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 117706920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Aplicación</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action &amp;Application - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 1239327232 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite ver las liquidaciones de artículo que se crean automáticamente entre los movimientos contables de productos durante las transacciones de productos.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Application Worksheet - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 1239327232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hoja liquidación</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Application Worksheet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3978580347 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite ver los movimientos liquidados en este registro.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Applied E&amp;ntries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3978580347 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Movs. liquidados</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Applied E&amp;ntries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3868741142 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite ver los movimientos para cada reserva que se realiza, ya sea manual o automáticamente.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Reservation Entries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3868741142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Movs. reserva</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Reservation Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 1405007275 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite buscar todos los movimientos y los documentos que existen para el número de documento y la fecha de registro que constan en el movimiento o el documento seleccionado.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action &amp;Navigate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 1405007275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Navegar</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action &amp;Navigate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2256583518 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Movimiento</source>
+          <note from="Developer" annotates="general" priority="2">ESP="&amp;Movimiento"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Ent&amp;ry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2270291913 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite ver el historial de los importes registrados que afectan al valor del producto. Los movimientos de valor se crean para todas las transacciones con el producto.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action &amp;Value Entries - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2270291913 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Movs. &amp;valor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action &amp;Value Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3674976770 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Permite ver o editar dimensiones, como el área, el proyecto o el departamento, que pueden asignarse a los documentos de venta y compra para distribuir costes y analizar el historial de transacciones.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Dimensiones - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3674976770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dimensiones</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Dimensiones"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Dimensiones - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 4062682134 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Limita los movimientos según los filtros de dimensión especificados. NOTA: Si usa un número alto de combinaciones de dimensiones, es posible que esta función no funcione y se puede generar un mensaje de que SQL Server solo admite un máximo de 2100 parámetros.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action SetDimensionFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 4062682134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Establecer filtro de dimensión</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action SetDimensionFilter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 1083390673 - Action 3549123145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Crear Diario</source>
           <note from="Developer" annotates="general" priority="2">ESP="Crear diario"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateJnlLineAdjust - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2185030199 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imprimir etiqueta</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Imprimir etiqueta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Imprimir Etiqueta - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2185030199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imprimir Etiqueta</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Imprimir Etiqueta"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action Imprimir Etiqueta - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3220567556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Return Order</source>
