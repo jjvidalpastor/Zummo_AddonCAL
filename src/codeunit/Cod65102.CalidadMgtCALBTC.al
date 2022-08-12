@@ -4,7 +4,8 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
         SMTPMailSetup: Record "SMTP Mail Setup";
         cduSMTP: Codeunit "SMTP Mail";
         InspRecMsg: Label 'Inspección de Calidad de Producto en Recepción %1 creada';
-        InspAlmMsg: Label 'Inspección de Calidad de Producto en Amacén %1 creada';
+        InspAlmMsg: Label 'Inspección de Calidad de Producto en Amacén %1 creada.';
+        InspAlmMsg2: Label '\¿Desea abrir la inspección?';
         InspFabMsg: Label 'Inspección de Calidad de Producto en Fabricación %1 creada';
         InspEnvMsg: Label 'Inspección de Calidad de Producto en Envío a Cliente %1 creada';
         InspDevMsg: Label 'Inspección de Calidad de Producto de Devolución de Cliente %1 creada';
@@ -2247,5 +2248,253 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
 
         ItemJnlLine.Insert(true);
 
+    end;
+
+    procedure CrearInspeccionProducto(var pItemLedgerEntry: Record "Item Ledger Entry")
+    var
+        GestionCalidadSetup: Record "Setup Calidad_CAL_btc";
+        Item: Record Item;
+        ConfPlantilla: record "Conf_Plantillas_Calidad";
+        Plantilla: Record "Plantilla de inseval_CAL_btc";
+        Inspeccion: Record "Cab inspe eval_CAL_btc";
+        RecDetallePlantilla: Record "Grupos inspec x planta_CAL_btc";
+        RecDetalleGrupo: Record "Req Contr x grupo insp_CAL_btc";
+        RecLinIns: Record "Lin inspe eval_CAL_btc";
+        Requisitos: Record calidad_CAL_btc;
+        InfoLote: Record "Lot No. Information";
+        ReqEspecificos: Record "Req Control especifico_CAL_btc";
+        InspecciónCalidad_CAL_btc: page "Inspección de Calidad_CAL_btc";
+        numSerie: Code[20];
+        codPlantilla: Code[20];
+        NumLin: Integer;
+        Quantity: Decimal;
+    begin
+        pItemLedgerEntry.FindFirst();
+        Quantity := TestItemLedgerEntry(pItemLedgerEntry);
+        Item.Get(pItemLedgerEntry."Item No.");
+        if (Item.ActivarGestionCalidadCAL_BTC = false) then
+            Error('Atención: Producto sin gestión de calidad.');
+
+        GestionCalidadSetup.Get();
+        GestionCalidadSetup.TestField("Activar gestión de la calidad");
+        GestionCalidadSetup.TestField("No. serie Cab. Inspección");
+        ConfPlantilla.Reset();
+        ConfPlantilla.SetRange("Origen inspección", ConfPlantilla."Origen inspección"::Producto);
+        ConfPlantilla.FindFirst();
+        ConfPlantilla.TestField(CodPlantillaInspeccion);
+
+        Clear(numSerie);
+        Inspeccion.Init();
+
+        if Item.CodPlantillaAlmacenCAL_BTC <> '' then
+            codPlantilla := Item.CodPlantillaAlmacenCAL_BTC
+        else
+            codPlantilla := ConfPlantilla.CodPlantillaInspeccion;
+
+        numSerie := GestionCalidadSetup."No. serie insp. almacén";
+
+        Plantilla.Reset();
+        Plantilla.SetRange("No.", codPlantilla);
+        Plantilla.SetRange(Bloqueado, false);
+        Plantilla.SetRange("Version activa", true);
+        Plantilla.SetRange(Estado, Plantilla.Estado::Certificada);
+        if Plantilla.FindLast() = false then Error(PlanNDisMsg, codPlantilla);
+
+        Inspeccion.Validate("Origen inspección", Inspeccion."Origen inspección"::Producto);
+        Inspeccion.Validate("No. de serie", numSerie);
+
+        Inspeccion.Validate("Cód. plantilla", Plantilla."No.");
+        Inspeccion.Validate("No. revision plantilla", Plantilla."No. revisión");
+        Inspeccion.Validate(Descripción, Plantilla.Descripcion);
+        Inspeccion.Validate("Tipo inspección", Plantilla."Tipo inspección");
+        Inspeccion.Validate("Objeto inspección", Plantilla."Objeto inspección");
+        Inspeccion.Validate("Criterio de muestreo", Plantilla."Criterio de muestreo");
+        Inspeccion.Validate("Tamaño muestra recomendado", Plantilla."Tamaño muestra recomendado");
+        Inspeccion.Validate("% muestra recomendado", Plantilla."% muestra recomendado");
+        Inspeccion.Validate("Tipo de Requisitos Específicos", Plantilla."Tipo de Requisitos Específicos");
+
+        Inspeccion.Validate("No. producto", pItemLedgerEntry."Item No.");
+        Inspeccion.Validate("Cód. variante", pItemLedgerEntry."Variant Code");
+        Inspeccion.Validate("Cód. almacén", pItemLedgerEntry."Location Code");
+        Inspeccion.Validate("Unidad de medida", pItemLedgerEntry."Unit of Measure Code");
+
+        Inspeccion.Validate("No. lote inspeccionado", pItemLedgerEntry."Lot No.");
+        Inspeccion.Validate("No. serie inspeccionado", pItemLedgerEntry."Serial No.");
+        Inspeccion.Validate("Fecha caducidad", pItemLedgerEntry."Expiration Date");
+        Inspeccion.Validate("Fecha fabricación", pItemLedgerEntry."Warranty Date");
+        Inspeccion.Validate("Cantidad Lote", Quantity);
+        Inspeccion.Validate("Cantidad Inspeccionada", Quantity);
+
+        // Datos proveedor
+
+        Inspeccion."No. proveedor" := GetVendorInspeccion(Inspeccion);
+        Inspeccion.TestField("No. proveedor");
+
+        InfoLote.Init();
+        if Inspeccion."No. lote inspeccionado" <> '' then
+            if InfoLote.Get(Inspeccion."No. producto", Inspeccion."Cód. variante", Inspeccion."No. lote inspeccionado") then begin
+                InfoLote.Validate(FechaCaducidadCAL_BTC, Inspeccion."Fecha caducidad");
+                InfoLote.Validate(FechaFabricacionCAL_BTC, Inspeccion."Fecha fabricación");
+                InfoLote.Validate(EstadoControlCalidadCAL_BTC, InfoLote.EstadoControlCalidadCAL_BTC::Cuarentena);
+                if InfoLote.EstadoAprobadoPrevioCAL_BTC = true then Inspeccion.Validate(Recontrol, true);
+                InfoLote.Modify(true);
+            end
+            else begin
+                InfoLote.Init();
+                InfoLote.Validate("Item No.", Inspeccion."No. producto");
+                InfoLote.Validate("Variant Code", Inspeccion."Cód. variante");
+                InfoLote.Validate("Lot No.", Inspeccion."No. lote inspeccionado");
+                InfoLote.Validate(FechaCaducidadCAL_BTC, Inspeccion."Fecha caducidad");
+                InfoLote.Validate(FechaFabricacionCAL_BTC, Inspeccion."Fecha fabricación");
+                InfoLote.Validate(EstadoControlCalidadCAL_BTC, InfoLote.EstadoControlCalidadCAL_BTC::Cuarentena);
+                InfoLote.Insert(true);
+            end;
+
+        Inspeccion.CalcCantidadSugerida();
+
+        Inspeccion.Insert(true);
+
+
+        Clear(NumLin);
+        RecDetallePlantilla.Reset();
+        RecDetallePlantilla.SetRange(Bloqueado, false);
+        RecDetallePlantilla.SetRange("Cód. plantilla", Inspeccion."Cód. plantilla");
+        RecDetallePlantilla.SetRange("No. revision plantilla", Inspeccion."No. revision plantilla");
+        if RecDetallePlantilla.FindSet() then begin
+            repeat
+                RecDetalleGrupo.Reset();
+                RecDetalleGrupo.SetRange(Bloqueado, false);
+                RecDetalleGrupo.SetRange("Cód. grupo inspección", RecDetallePlantilla."Cod. grupo inspección");
+                if RecDetalleGrupo.FindSet() then
+                    repeat
+                        RecLinIns.Init();
+                        RecLinIns.Validate("Origen inspección", Inspeccion."Origen inspección");
+                        RecLinIns.Validate("No. inspección", Inspeccion."No.");
+                        RecLinIns.Validate("Cód. grupo inspección", RecDetalleGrupo."Cód. grupo inspección");
+                        if Requisitos.Get(RecDetalleGrupo."Cod. requisito control") then
+                            if Requisitos.Bloqueado = false then begin
+                                if Inspeccion."Tipo de Requisitos Específicos" = Inspeccion."Tipo de Requisitos Específicos"::"Sólo Específicos" then begin
+                                    ReqEspecificos.Init();
+                                    if ReqEspecificos.Get(ReqEspecificos.Tipo::Producto, RecDetalleGrupo."Cod. requisito control", Inspeccion."No. producto", Inspeccion."Cód. variante") then
+                                        if ReqEspecificos.Bloqueado = false then begin
+                                            RecLinIns.Validate("No. producto", Inspeccion."No. producto");
+                                            RecLinIns.Validate("Cód. variante", Inspeccion."Cód. variante");
+                                            RecLinIns.Validate("No. proveedor", Inspeccion."No. proveedor");
+                                            RecLinIns.Validate("No. cliente", Inspeccion."No. cliente");
+                                            RecLinIns.Validate("Cód. tarea", Inspeccion."Cód. tarea");
+                                            RecLinIns.Validate("Tipo de Requisitos Específicos", Inspeccion."Tipo de Requisitos Específicos");
+                                            RecLinIns.Validate("Cód. requisito control", RecDetalleGrupo."Cod. requisito control");
+                                            NumLin += 10000;
+                                            RecLinIns.Validate("No. línea", NumLin);
+                                            RecLinIns.Insert(true);
+                                        end;
+                                end;
+                                if Inspeccion."Tipo de Requisitos Específicos" <> Inspeccion."Tipo de Requisitos Específicos"::"Sólo Específicos" then begin
+                                    RecLinIns.Validate("No. producto", Inspeccion."No. producto");
+                                    RecLinIns.Validate("Cód. variante", Inspeccion."Cód. variante");
+                                    RecLinIns.Validate("No. proveedor", Inspeccion."No. proveedor");
+                                    RecLinIns.Validate("No. cliente", Inspeccion."No. cliente");
+                                    RecLinIns.Validate("Cód. tarea", Inspeccion."Cód. tarea");
+                                    RecLinIns.Validate("Tipo de Requisitos Específicos", Inspeccion."Tipo de Requisitos Específicos");
+                                    RecLinIns.Validate("Cód. requisito control", RecDetalleGrupo."Cod. requisito control");
+                                    NumLin += 10000;
+                                    RecLinIns.Validate("No. línea", NumLin);
+                                    RecLinIns.Insert(true);
+                                end;
+                            end;
+                    until RecDetalleGrupo.Next() = 0
+                else
+                    Message(GrupReqMsg, codPlantilla);
+            until RecDetallePlantilla.Next() = 0;
+            // Message(InspAlmMsg, Inspeccion."No.");
+            // indicamos que se ha creado y si se quiere abrir
+            // al final de la funcion
+
+        end
+        else
+            Message(GrupReqMsg, codPlantilla);
+
+        UpdateNoInspeccionItemLedgerEntry(pItemLedgerEntry, Inspeccion."No.");
+        Commit();
+
+        Clear(GestionCalidadSetup);
+        GestionCalidadSetup.Get();
+        DCActiva := GestionCalidadSetup."Activar aviso apertura inspecc";
+        if DCActiva then begin
+            SMTPMailSetup.Init();
+            SMTPMailSetup.Get();
+            SMTPMailSetup.TestField("SMTP Server");
+            MailEmisor := SMTPMailSetup."User ID";
+            MailReceptores := GestionCalidadSetup."Receptores Apertura Inspeccion";
+            PopUp := GestionCalidadSetup."Activar aviso mensajes emisor";
+            Clear(MailAsunto);
+            Clear(MailCuerpo);
+            CR := 13;
+            LF := 10;
+        end;
+
+        if DCActiva then begin
+            if MailEmisor = '' then Error('Atención: debe configurar el usuario emisor del correo SMTP de la gestión de avisos');
+            if MailReceptores = '' then Error('Atención: debe configurar los usuarios receptores del aviso de la apertura de inspección');
+            MailAsunto := 'Aviso Automático. Inspección de Calidad: ' + Format(Inspeccion."No.") + ' Origen: ' + Format(Inspeccion."Origen inspección");
+            MailCuerpo := 'Inspección de Calidad: ' + Format(Inspeccion."No.") + ' Origen: ' + Format(Inspeccion."Origen inspección") + ' en Estado Abierta y SubEstado: ' +
+            Format(Inspeccion."SubEstado inspección") + ' por: ' + Format(UserId()) + Format(CR, 0, '<CHAR>') + Format(LF, 0, '<CHAR>') + Format(LF, 0, '<CHAR>') +
+            'Producto: ' + Format(Inspeccion."No. producto") + ' - ' + Inspeccion."Descripción producto" + Format(CR, 0, '<CHAR>') + Format(LF, 0, '<CHAR>') + Format(LF, 0, '<CHAR>') +
+            'Pendiente de Analizar en fecha/hora: ' + Format(CurrentDateTime()) + Format(CR, 0, '<CHAR>') + Format(LF, 0, '<CHAR>') +
+            Format(LF, 0, '<CHAR>') + 'Mensaje automático emitido desde ' + MailEmisor + ' por el sistema de avisos';
+            Clear(cduSMTP);
+            cduSMTP.CreateMessage('Aviso de Apertura Inspección', MailEmisor, MailReceptores, MailAsunto, MailCuerpo, false);
+            cduSMTP.Send();
+            if PopUp then Message('Correo enviado a los Receptores de Apertura Inspección');
+        end;
+        if Confirm(InspAlmMsg + InspAlmMsg2, false, Inspeccion."No.") then begin
+            page.RunModal(page::"Inspección de Calidad_CAL_btc", Inspeccion);
+        end;
+
+    end;
+
+    local procedure TestItemLedgerEntry(var ItemLedgerEntry: record "Item Ledger Entry"): Decimal
+    var
+        ItemNo: code[20];
+        LocationCode: code[20];
+        lblError: Label 'El %1 debe ser el mismo en todos los %2', comment = 'ESP="El %1 debe ser el mismo en todos los %2"';
+    begin
+        if ItemLedgerEntry.findset() then
+            repeat
+                ItemLedgerEntry.TestField("No. Inpección", '');
+                if ItemNo = '' then
+                    ItemNo := ItemLedgerEntry."Item No.";
+                if ItemNo <> ItemLedgerEntry."Item No." then
+                    Error(lblError, ItemLedgerEntry.FieldCaption(ItemLedgerEntry."Item No."), ItemLedgerEntry.TableCaption);
+                if LocationCode = '' then
+                    LocationCode := ItemLedgerEntry."Item No.";
+                if LocationCode <> ItemLedgerEntry."Item No." then
+                    Error(lblError, ItemLedgerEntry.FieldCaption(ItemLedgerEntry."Location Code"), ItemLedgerEntry.TableCaption);
+            Until ItemLedgerEntry.next() = 0;
+
+        ItemLedgerEntry.CalcSums("Remaining Quantity");
+        exit(ItemLedgerEntry."Remaining Quantity");
+    end;
+
+    local procedure UpdateNoInspeccionItemLedgerEntry(var ItemLedgerEntry: record "Item Ledger Entry"; NoInspeccion: code[20])
+    begin
+        if ItemLedgerEntry.findset() then
+            repeat
+                ItemLedgerEntry."No. Inpección" := NoInspeccion;
+                ItemLedgerEntry.Modify();
+            Until ItemLedgerEntry.next() = 0;
+    end;
+
+    local procedure GetVendorInspeccion(Inspeccion: record "Cab inspe eval_CAL_btc"): Code[20]
+    var
+        Item: record Item;
+        DatosInspeccion: page "datos Inspecion";
+    begin
+        Item.get(Inspeccion."No. producto");
+        DatosInspeccion.SetVendor(Item."Vendor No.");
+        if DatosInspeccion.RunModal() = Action::OK then
+            exit(DatosInspeccion.GetVendor())
+        else
+            Error('Cancelado usuario');
     end;
 }

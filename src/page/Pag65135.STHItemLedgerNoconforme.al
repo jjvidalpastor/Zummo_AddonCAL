@@ -38,6 +38,10 @@ page 65135 "STH Item Ledger No conforme"
                     ApplicationArea = NONE;
                     ToolTip = 'Specifies the value of the External Document No. field.';
                 }
+                field("No. Inpección"; "No. Inpección")
+                {
+                    ApplicationArea = all;
+                }
                 field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = NONE;
@@ -47,6 +51,10 @@ page 65135 "STH Item Ledger No conforme"
                 {
                     ApplicationArea = NONE;
                     ToolTip = 'Specifies the value of the Description field.';
+                }
+                field(ActivarGestionCalidadCAL_BTC; ActivarGestionCalidadCAL_BTC)
+                {
+                    ApplicationArea = all;
                 }
                 field("Default Vendor No."; "Default Vendor No.")
                 {
@@ -135,6 +143,20 @@ page 65135 "STH Item Ledger No conforme"
                 trigger OnAction()
                 begin
                     CreateJnlLineAdjustNeg;
+                end;
+            }
+            action(CreateQualityInspeccion)
+            {
+                ApplicationArea = All;
+                Caption = 'Crear Inspección Calidad', comment = 'ESP="Crear Inspección Calidad"';
+                Image = QualificationOverview;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                begin
+                    CreateQualityInspeccionItem;
                 end;
             }
         }
@@ -333,6 +355,19 @@ page 65135 "STH Item Ledger No conforme"
         CurrPage.SetSelectionFilter(ItemLedgerEntry);
         if Confirm(lblConfirm, false, ItemLedgerEntry.Count) then
             CALMgtFunction.CreateJnlLineAdjustNeg(ItemLedgerEntry);
+
+    end;
+
+    local procedure CreateQualityInspeccionItem()
+    var
+        CALMgtFunction: Codeunit "Calidad Mgt_CAL_BTC";
+        ItemLedgerEntry: Record "Item Ledger Entry";
+    begin
+        // Función que a todos los registros seleccionados 
+        // Creara el diario de productos con ajuste negativo, con misma cantidad pendiente y coste por unidad.
+        CurrPage.SetSelectionFilter(ItemLedgerEntry);
+        if Confirm(lblConfirm, false, ItemLedgerEntry.Count) then
+            CALMgtFunction.CrearInspeccionProducto(ItemLedgerEntry);
 
     end;
 }

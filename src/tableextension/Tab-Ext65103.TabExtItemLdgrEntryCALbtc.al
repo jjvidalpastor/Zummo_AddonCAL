@@ -54,6 +54,24 @@ tableextension 65103 "TabExtItemLdgrEntry_CAL_btc" extends "Item Ledger Entry"
             FieldClass = FlowField;
             CalcFormula = lookup(Vendor.Name where("No." = field("Default Vendor No.")));
         }
+        field(65252; "ActivarGestionCalidadCAL_BTC"; Boolean)
+        {
+            Caption = 'Activar gestion de la calidad';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(Item.ActivarGestionCalidadCAL_BTC where("No." = field("Item No.")));
+        }
+        field(65260; "No. Inpección"; code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'No. Inpección';
+            Editable = false;
+
+            TableRelation = "Cab inspe eval_CAL_btc";
+
+
+        }
+
     }
     /*
         keys

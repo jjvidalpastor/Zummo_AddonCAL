@@ -46,28 +46,7 @@ page 65123 "InspeccionCue"
                 {
                     ApplicationArea = All;
                 }
-                field(ProductoTerminada; ProductoTerminada)
-                {
-                    ApplicationArea = All;
-                }
-            }
-            cuegroup(Producto)
-            {
-                Visible = false;
-
-                field(ProductoOpen; ProductoOpen)
-                {
-                    ApplicationArea = All;
-                }
-                field(ProductoLanzada; ProductoLanzada)
-                {
-                    ApplicationArea = All;
-                }
                 field(ProveedorTerminada; ProveedorTerminada)
-                {
-                    ApplicationArea = All;
-                }
-                field(ProductoCertificada; ProductoCertificada)
                 {
                     ApplicationArea = All;
                 }
@@ -131,6 +110,27 @@ page 65123 "InspeccionCue"
                     ApplicationArea = All;
                 }
                 field(LinAlbCompraTerminada; LinAlbCompraTerminada)
+                {
+                    ApplicationArea = All;
+                }
+            }
+            cuegroup(Producto)
+            {
+                // Visible = false;
+
+                field(ProductoOpen; ProductoOpen)
+                {
+                    ApplicationArea = All;
+                }
+                field(ProductoLanzada; ProductoLanzada)
+                {
+                    ApplicationArea = All;
+                }
+                field(ProductoCertificada; ProductoCertificada)
+                {
+                    ApplicationArea = All;
+                }
+                field(ProductoTerminada; ProductoTerminada)
                 {
                     ApplicationArea = All;
                 }

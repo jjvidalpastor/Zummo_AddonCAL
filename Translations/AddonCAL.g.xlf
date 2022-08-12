@@ -3174,9 +3174,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType GrupReqMsg</note>
         </trans-unit>
         <trans-unit id="Codeunit 3340231565 - NamedType 3292637351" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inspección de Calidad de Producto en Amacén %1 creada</source>
+          <source>Inspección de Calidad de Producto en Amacén %1 creada.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType InspAlmMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3340231565 - NamedType 4135291689" size-unit="char" translate="yes" xml:space="preserve">
+          <source>\¿Desea abrir la inspección?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType InspAlmMsg2</note>
         </trans-unit>
         <trans-unit id="Codeunit 3340231565 - NamedType 680719526" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inspección de Calidad de Producto de Devolución de Cliente %1 creada</source>
@@ -3237,6 +3242,11 @@
           <source>Plantilla %1 No Disponible. Revise Versiones Activas y/o Certificadas.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - NamedType PlanNDisMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3340231565 - Method 2930561078 - NamedType 2026798726" size-unit="char" translate="yes" xml:space="preserve">
+          <source>El %1 debe ser el mismo en todos los %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="El %1 debe ser el mismo en todos los %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Calidad Mgt_CAL_BTC - Method TestItemLedgerEntry - NamedType lblError</note>
         </trans-unit>
         <trans-unit id="Codeunit 2876751321 - Method 2855373694 - NamedType 2904677279" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inspección de Calidad Nº doc. Origen: %1 Nº lín. doc origen: %2 sin Requisito No Conforme y Afectación a Conformidad para Crear No Conformidad. Revise líneas de Inspección.</source>
@@ -3367,6 +3377,21 @@
           <source>Posting Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page ChangStOnCabInsp_CAL_btc - Control PostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3182559281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Datos Inspecion</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page datos Inspecion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3182559281 - Control 779730061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nombre</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page datos Inspecion - Control VendorName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3182559281 - Control 1607295407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cód. proveedor</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. proveedor"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page datos Inspecion - Control VendorNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2562019278 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Defectos</source>
@@ -3892,6 +3917,11 @@
           <source>Crear Diario</source>
           <note from="Developer" annotates="general" priority="2">ESP="Crear diario"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateJnlLineAdjust - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 2604607004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Crear Inspección Calidad</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear Inspección Calidad"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateQualityInspeccion - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1083390673 - Action 2185030199 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Imprimir etiqueta</source>
@@ -4928,6 +4958,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtCustomer_CAL_btc - Field NoConformidadAGR_BTC - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2957556811 - Field 864363639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Activar gestion de la calidad</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field ActivarGestionCalidadCAL_BTC - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2957556811 - Field 2900849794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>Datetime registro</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4947,6 +4982,11 @@
           <source>Inspeccion de calidad</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field InspeccionCalidadCAL_BTC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2957556811 - Field 443961211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>No. Inpección</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension TabExtItemLdgrEntry_CAL_btc - Field No. Inpección - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2957556811 - Field 2103435214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
           <source>No. no conformidad</source>
