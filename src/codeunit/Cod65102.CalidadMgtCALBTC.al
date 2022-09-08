@@ -1,5 +1,8 @@
 codeunit 65102 "Calidad Mgt_CAL_BTC"
 {
+
+    Permissions = tabledata "Item Ledger Entry" = rmid;
+
     var
         SMTPMailSetup: Record "SMTP Mail Setup";
         cduSMTP: Codeunit "SMTP Mail";
