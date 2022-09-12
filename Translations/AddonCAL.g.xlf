@@ -2928,6 +2928,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="Nombre sección diario No conforme"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Batch No conforme - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2150149270 - Field 1775185857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Batch Name Reclas.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre sección diario Reclasificación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Batch Reclas - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2150149270 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Template Name</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nombre libro diario"</note>
@@ -2937,6 +2942,16 @@
           <source>Journal Template Name No conforme</source>
           <note from="Developer" annotates="general" priority="2">ESP="Nombre libro diario No conforme"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Template No conforme - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2150149270 - Field 2820198229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journal Template Name Reclas.</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Nombre libro diario Reclasificación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Journal Template Reclas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2150149270 - Field 2363345392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code Raw </source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. Almacén Materias primas"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Setup Calidad_CAL_btc - Field Location Code Raw - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2150149270 - Field 2570073304 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cab Series No. Inspection</source>
@@ -3773,6 +3788,11 @@
           <note from="Developer" annotates="general" priority="2">ESP="¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - NamedType lblConfirm</note>
         </trans-unit>
+        <trans-unit id="Page 1083390673 - NamedType 72995062" size-unit="char" translate="yes" xml:space="preserve">
+          <source>¿Desea crear el diario de reclasificación producto de las %1 líneas seleccionadas?</source>
+          <note from="Developer" annotates="general" priority="2">ESP="¿Desea crear el diario de reclasificación de producto de las %1 líneas seleccionadas?"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - NamedType lblConfirmReclas</note>
+        </trans-unit>
         <trans-unit id="Page 1083390673 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Description field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3915,8 +3935,13 @@
         </trans-unit>
         <trans-unit id="Page 1083390673 - Action 3549123145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Crear Diario</source>
-          <note from="Developer" annotates="general" priority="2">ESP="Crear diario"</note>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear Ajuste  Negativo"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateJnlLineAdjust - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1083390673 - Action 3566784241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Crear Reclasificación</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Crear Reclasificación"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page STH Item Ledger No conforme - Action CreateJnlLineReclasificacion - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1083390673 - Action 2604607004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Crear Inspección Calidad</source>

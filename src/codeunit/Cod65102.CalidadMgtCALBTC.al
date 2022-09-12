@@ -2170,11 +2170,11 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
                             PurchaseLine2.Description := PurchaseLine.Description;
                         end;
                     else begin
-                            PurchaseLine2.Type := PurchaseLine.Type;
-                            PurchaseLine2.Validate("No.", PurchaseLine."No.");
-                            PurchaseLine2."Location Code" := 'MMPP';
-                            PurchaseLine2.Validate(Quantity, PurchaseLine.Quantity);
-                        end;
+                        PurchaseLine2.Type := PurchaseLine.Type;
+                        PurchaseLine2.Validate("No.", PurchaseLine."No.");
+                        PurchaseLine2."Location Code" := 'MMPP';
+                        PurchaseLine2.Validate(Quantity, PurchaseLine.Quantity);
+                    end;
                 end;
 
                 PurchaseLine2.Insert();
@@ -2210,6 +2210,38 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
 
     end;
 
+    procedure CreateJnlLineReclasificacion(var ItemLedgerEntry: Record "Item Ledger Entry")
+    var
+        ItemJnlLine: record "Item Journal Line";
+        CALSetup: record "Setup Calidad_CAL_btc";
+    begin
+        // Función que a todos los registros seleccionados 
+        // Creara el diario de productos con ajuste negativo, con misma cantidad pendiente y coste por unidad.   
+        CALSetup.Get();
+        InitItemJnlReclas();
+        if ItemLedgerEntry.findset() then
+            repeat
+                ItemJnlLine.Init();
+                InitItemJnlLineReclas(ItemJnlLine);
+                ItemJnlLine.validate("Item No.", ItemLedgerEntry."Item No.");
+                ItemJnlLine.validate("Variant Code", ItemLedgerEntry."Variant Code");
+                ItemJnlLine.validate("Location Code", ItemLedgerEntry."Location Code");
+                ItemJnlLine.validate("New Location Code", CALSetup."Location Code Raw");
+                ItemJnlLine.validate(Quantity, ItemLedgerEntry."Remaining Quantity");
+
+                ItemJnlLine.validate("Applies-to Entry", ItemLedgerEntry."Entry No.");
+                ItemJnlLine.Modify();
+            Until ItemLedgerEntry.next() = 0;
+
+        if ItemJnlLine.Count > 0 then begin
+            Commit();
+            ItemJnlLine.SetRange("Journal Template Name", ItemJnlLine."Journal Template Name");
+            ItemJnlLine.SetRange("Journal Batch Name", ItemJnlLine."Journal Batch Name");
+            Page.RunModal(PAGE::"Item Reclass. Journal", ItemJnlLine);
+        end;
+
+    end;
+
     local procedure InitItemJnl()
     var
         CALSetup: record "Setup Calidad_CAL_btc";
@@ -2220,6 +2252,20 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
         CALSetup.TestField("Journal Batch No conforme");
         ItemJnlLine2.SetRange("Journal Template Name", CALSetup."Journal Template No conforme");
         ItemJnlLine2.SetRange("Journal Batch Name", CALSetup."Journal Batch No conforme");
+        ItemJnlLine2.DeleteAll();
+
+    end;
+
+    local procedure InitItemJnlReclas()
+    var
+        CALSetup: record "Setup Calidad_CAL_btc";
+        ItemJnlLine2: record "Item Journal Line";
+    begin
+        CALSetup.Get();
+        CALSetup.TestField("Journal Template Reclas");
+        CALSetup.TestField("Journal Batch Reclas");
+        ItemJnlLine2.SetRange("Journal Template Name", CALSetup."Journal Template Reclas");
+        ItemJnlLine2.SetRange("Journal Batch Name", CALSetup."Journal Batch Reclas");
         ItemJnlLine2.DeleteAll();
 
     end;
@@ -2253,6 +2299,35 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
 
     end;
 
+    local procedure InitItemJnlLineReclas(var ItemJnlLine: record "Item Journal Line")
+    var
+        CALSetup: record "Setup Calidad_CAL_btc";
+        ItemJnlBatch: Record "Item Journal Batch";
+        ItemJnlLine2: record "Item Journal Line";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+    begin
+        CALSetup.Get();
+        CALSetup.TestField("Journal Template Reclas");
+        CALSetup.TestField("Journal Batch Reclas");
+
+        ItemJnlLine."Journal Template Name" := CALSetup."Journal Template Reclas";
+        ItemJnlLine."Journal Batch Name" := CALSetup."Journal Batch Reclas";
+        ItemJnlLine2.SetRange("Journal Template Name", CALSetup."Journal Template Reclas");
+        ItemJnlLine2.SetRange("Journal Batch Name", CALSetup."Journal Batch Reclas");
+        if ItemJnlLine2.FindLast() then
+            ItemJnlLine."Line No." := ItemJnlLine2."Line No." + 10000
+        else
+            ItemJnlLine."Line No." := 10000;
+        ItemJnlLine.validate("Posting Date", WorkDate());
+        ItemJnlBatch.Get(ItemJnlLine."Journal Template Name", ItemJnlLine."Journal Batch Name");
+        CLEAR(NoSeriesMgt);
+        ItemJnlLine."Document No." := NoSeriesMgt.GetNextNo(ItemJnlBatch."No. Series", ItemJnlLine."Posting Date", FALSE);
+        ItemJnlLine.validate("Entry Type", ItemJnlLine."Entry Type"::Transfer);
+
+        ItemJnlLine.Insert(true);
+
+    end;
+
     procedure CrearInspeccionProducto(var pItemLedgerEntry: Record "Item Ledger Entry")
     var
         GestionCalidadSetup: Record "Setup Calidad_CAL_btc";
@@ -2275,8 +2350,8 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
         pItemLedgerEntry.FindFirst();
         Quantity := TestItemLedgerEntry(pItemLedgerEntry);
         Item.Get(pItemLedgerEntry."Item No.");
-        if (Item.ActivarGestionCalidadCAL_BTC = false) then
-            Error('Atención: Producto sin gestión de calidad.');
+        // if (Item.ActivarGestionCalidadCAL_BTC = false) then
+        //     Error('Atención: Producto sin gestión de calidad.');
 
         GestionCalidadSetup.Get();
         GestionCalidadSetup.TestField("Activar gestión de la calidad");

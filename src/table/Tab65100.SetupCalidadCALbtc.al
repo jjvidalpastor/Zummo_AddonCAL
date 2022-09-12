@@ -354,13 +354,28 @@ table 65100 "Setup Calidad_CAL_btc"
         field(50060; "Journal Template No conforme"; code[10])
         {
             Caption = 'Journal Template Name No conforme', Comment = 'ESP="Nombre libro diario No conforme"';
-            TableRelation = "Item Journal Template";
+            TableRelation = "Item Journal Template" where(type = const(Item));
         }
         field(50061; "Journal Batch No conforme"; code[10])
         {
             Caption = 'Journal Batch Name No conforme', Comment = 'ESP="Nombre sección diario No conforme"';
             TableRelation = "Item Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template No conforme"));
         }
+        field(50062; "Journal Template Reclas"; code[10])
+        {
+            Caption = 'Journal Template Name Reclas.', Comment = 'ESP="Nombre libro diario Reclasificación"';
+            TableRelation = "Item Journal Template" where(type = const(Item));
+        }
+        field(50063; "Journal Batch Reclas"; code[10])
+        {
+            Caption = 'Journal Batch Name Reclas.', Comment = 'ESP="Nombre sección diario Reclasificación"';
+            TableRelation = "Item Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template No conforme"));
+        }
+        field(50065; "Location Code Raw"; code[10])
+        {
+            Caption = 'Location Code Raw ', comment = 'ESP="Cód. Almacén Materias primas"';
+        }
+
     }
     keys
     {

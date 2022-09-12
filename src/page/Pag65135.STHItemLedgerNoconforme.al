@@ -134,7 +134,7 @@ page 65135 "STH Item Ledger No conforme"
             action(CreateJnlLineAdjust)
             {
                 ApplicationArea = All;
-                Caption = 'Crear Diario', comment = 'ESP="Crear diario"';
+                Caption = 'Crear Diario', comment = 'ESP="Crear Ajuste  Negativo"';
                 Image = OpenJournal;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -143,6 +143,20 @@ page 65135 "STH Item Ledger No conforme"
                 trigger OnAction()
                 begin
                     CreateJnlLineAdjustNeg;
+                end;
+            }
+            action(CreateJnlLineReclasificacion)
+            {
+                ApplicationArea = All;
+                Caption = 'Crear Reclasificación', comment = 'ESP="Crear Reclasificación"';
+                Image = BinJournal;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                begin
+                    CreateJnlLineReclas;
                 end;
             }
             action(CreateQualityInspeccion)
@@ -327,6 +341,7 @@ page 65135 "STH Item Ledger No conforme"
         Customer: Record Customer;
         SourceName: text;
         lblConfirm: Label '¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?', comment = 'ESP="¿Desea crear el diario de producto con ajustes negarivos de las %1 líneas seleccionadas?"';
+        lblConfirmReclas: Label '¿Desea crear el diario de reclasificación producto de las %1 líneas seleccionadas?', comment = 'ESP="¿Desea crear el diario de reclasificación de producto de las %1 líneas seleccionadas?"';
 
     trigger OnAfterGetRecord()
     begin
@@ -355,6 +370,19 @@ page 65135 "STH Item Ledger No conforme"
         CurrPage.SetSelectionFilter(ItemLedgerEntry);
         if Confirm(lblConfirm, false, ItemLedgerEntry.Count) then
             CALMgtFunction.CreateJnlLineAdjustNeg(ItemLedgerEntry);
+
+    end;
+
+    local procedure CreateJnlLineReclas()
+    var
+        CALMgtFunction: Codeunit "Calidad Mgt_CAL_BTC";
+        ItemLedgerEntry: Record "Item Ledger Entry";
+    begin
+        // Función que a todos los registros seleccionados 
+        // Creara el diario de productos con ajuste negativo, con misma cantidad pendiente y coste por unidad.
+        CurrPage.SetSelectionFilter(ItemLedgerEntry);
+        if Confirm(lblConfirmReclas, false, ItemLedgerEntry.Count) then
+            CALMgtFunction.CreateJnlLineReclasificacion(ItemLedgerEntry);
 
     end;
 

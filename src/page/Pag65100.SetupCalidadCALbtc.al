@@ -53,6 +53,18 @@ page 65100 "Setup Calidad_CAL_btc"
                 {
                     ApplicationArea = all;
                 }
+                field("Journal Template Reclas"; "Journal Template Reclas")
+                {
+                    ApplicationArea = all;
+                }
+                field("Journal Batch Reclas"; "Journal Batch Reclas")
+                {
+                    ApplicationArea = all;
+                }
+                field("Location Code Raw"; "Location Code Raw")
+                {
+                    ApplicationArea = all;
+                }
             }
             group(Plantillas)
             {
