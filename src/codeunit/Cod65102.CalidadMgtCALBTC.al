@@ -2332,6 +2332,7 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
     var
         GestionCalidadSetup: Record "Setup Calidad_CAL_btc";
         Item: Record Item;
+        Bin: Record Bin;
         ConfPlantilla: record "Conf_Plantillas_Calidad";
         Plantilla: Record "Plantilla de inseval_CAL_btc";
         Inspeccion: Record "Cab inspe eval_CAL_btc";
@@ -2394,6 +2395,11 @@ codeunit 65102 "Calidad Mgt_CAL_BTC"
         Inspeccion.Validate("No. producto", pItemLedgerEntry."Item No.");
         Inspeccion.Validate("Cód. variante", pItemLedgerEntry."Variant Code");
         Inspeccion.Validate("Cód. almacén", pItemLedgerEntry."Location Code");
+        Bin.Reset();
+        Bin.SetRange("Location Code", pItemLedgerEntry."Location Code");
+        if Bin.FindSet() then
+            if Bin.Count = 1 then
+                Inspeccion.Validate("Cód. ubicación", Bin.Code);
         Inspeccion.Validate("Unidad de medida", pItemLedgerEntry."Unit of Measure Code");
 
         Inspeccion.Validate("No. lote inspeccionado", pItemLedgerEntry."Lot No.");

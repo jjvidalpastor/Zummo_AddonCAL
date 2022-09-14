@@ -518,6 +518,11 @@ codeunit 65105 "Crear_CabInspecCalidad_CAL_BTC"
             CabNoConf.Validate(CabNoConf."No. de serie", numSerie);
             CabNoConf."Nº doc. Origen calidad" := pInspeccion."Nº doc. Origen calidad";
             CabNoConf."Nº lín. doc. Origen calidad" := pInspeccion."Nº lín. doc. Origen calidad";
+            if pInspeccion."Origen inspección" in [pInspeccion."Origen inspección"::Producto] then begin
+                CabNoConf."Cód. almacén destino" := CabNoConf."Cód. almacén";
+                CabNoConf."Cód. ubicación destino" := CabNoConf."Cód. ubicación";
+            end;
+
             CabNoConf.Insert(true);
             Message(NconForMsg, CabNoConf."No. no conformidad");
         end;
