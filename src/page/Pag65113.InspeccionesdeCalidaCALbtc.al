@@ -44,6 +44,10 @@ page 65113 "Inspecciones de Calida_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Cantidad Inspeccionada"; "Cantidad Inspeccionada")
+                {
+                    ApplicationArea = all;
+                }
                 field("Estado inspección"; "Estado inspección")
                 {
                     ApplicationArea = All;

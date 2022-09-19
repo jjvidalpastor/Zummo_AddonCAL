@@ -54,6 +54,10 @@ page 65116 "No Conformidades_CAL_btc"
                 {
                     ApplicationArea = All;
                 }
+                field("Cantidad Inspeccionada"; "Cantidad Inspeccionada")
+                {
+                    ApplicationArea = all;
+                }
                 field("Evaluación Inspección"; "Evaluación Inspección")
                 {
                     ApplicationArea = All;

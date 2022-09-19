@@ -116,7 +116,7 @@ page 65117 "No Conformidad_CAL_btc"
             }
             group("Inspección")
             {
-                Visible = false;
+                // Visible = false;
                 Editable = false;
 
                 field("Estado no conformidad"; "Estado no conformidad")
