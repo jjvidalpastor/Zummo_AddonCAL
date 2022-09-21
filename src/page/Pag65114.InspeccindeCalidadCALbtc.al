@@ -4,7 +4,8 @@ page 65114 "Inspección de Calidad_CAL_btc"
     PageType = Card;
     SourceTable = "Cab inspe eval_CAL_btc";
     RefreshOnActivate = true;
-    DeleteAllowed = false;
+    //DeleteAllowed = false;
+    InsertAllowed = False;
 
     layout
     {
@@ -73,6 +74,7 @@ page 65114 "Inspección de Calidad_CAL_btc"
                 }
                 field("Item Category Code"; "Item Category Code")
                 {
+                    Caption = 'Cód. Categoría Producto', comment = 'ESP="Cód. Categoría Producto"';
                     Editable = false;
                     ApplicationArea = All;
                 }
@@ -589,6 +591,14 @@ page 65114 "Inspección de Calidad_CAL_btc"
         bClienteVisible := false;
     end;
 
+    trigger OnDeleteRecord(): Boolean
+    begin
+        if not ("Origen inspección" in ["Origen inspección"::Producto]) then
+            Error(lblDeleteProd);
+        if "Estado inspección" in ["Estado inspección"::Certificada, "Estado inspección"::Terminada] then
+            Error(lblDelete, "Estado inspección"::Certificada, "Estado inspección"::Terminada);
+    end;
+
     var
         InfoLote: Record "Lot No. Information";
         [InDataSet]
@@ -608,6 +618,8 @@ page 65114 "Inspección de Calidad_CAL_btc"
         bProductoLoteProveedor: Boolean;
         ControlVisual: Option " ",Bueno,Promedio,Bloquear,Bloqueado;
         EstadoRevisionVisual: Option Pendiente,Visado,Revisado,"No Obligatorio";
+        lblDeleteProd: Label 'Solo se pueden eliminar inspecciones de tipo producto', comment = 'ESP="Solo se pueden eliminar inspecciones de tipo producto"';
+        lblDelete: Label 'No se puede eliminar una inspección en los estados %1 y %2', comment = 'ESP="No se puede eliminar una inspección en los estados %1 y %2"';
 
     procedure SetVisible()
     begin
@@ -661,7 +673,7 @@ page 65114 "Inspección de Calidad_CAL_btc"
         end;
         //BEGIN FJAB 311019 Visibilidad campos page
         //TODO: Control visibilidad campos page por ser de Origen Muestras
-        /*
+        /*bEditable
               if "Origen inspección" = "Origen inspección"::Muestras then begin
                   bProductoLoteProveedor := true;
                   bProductoVisible := true;
@@ -681,5 +693,6 @@ page 65114 "Inspección de Calidad_CAL_btc"
             bEditable := true
         else
             bEditable := false;
+
     end;
 }

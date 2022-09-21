@@ -3553,6 +3553,16 @@
           <note from="Developer" annotates="general" priority="2">EPS="Inspección de Calidad"</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Inspección de Calidad_CAL_btc - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3410520875 - NamedType 2571500589" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No se puede eliminar una inspección en los estados %1 y %2</source>
+          <note from="Developer" annotates="general" priority="2">ESP="No se puede eliminar una inspección en los estados %1 y %2"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Inspección de Calidad_CAL_btc - NamedType lblDelete</note>
+        </trans-unit>
+        <trans-unit id="Page 3410520875 - NamedType 2430228614" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Solo se pueden eliminar inspecciones de tipo producto</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Solo se pueden eliminar inspecciones de tipo producto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Inspección de Calidad_CAL_btc - NamedType lblDeleteProd</note>
+        </trans-unit>
         <trans-unit id="Page 3410520875 - Control 357176556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Conformidad</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3572,6 +3582,11 @@
           <source>Producto</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Inspección de Calidad_CAL_btc - Control Producto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3410520875 - Control 1037119892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cód. Categoría Producto</source>
+          <note from="Developer" annotates="general" priority="2">ESP="Cód. Categoría Producto"</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Inspección de Calidad_CAL_btc - Control Item Category Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3410520875 - Control 2624744970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cantidades parciales a devolver</source>
