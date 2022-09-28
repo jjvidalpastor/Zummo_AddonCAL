@@ -582,12 +582,13 @@ table 65113 "Cab no conformidad_CAL_btc"
             trigger OnLookup()
             var
                 PurchaseHeader: Record "Purchase Header";
-                PurchaseReturnOrderList: Page "Purchase Return Order List";
+                PurchaseReturnOrder: Page "Purchase Return Order";
             begin
                 PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::"Return Order");
                 PurchaseHeader.SetRange("No.", Rec."Purch. Return Order");
                 PurchaseHeader.SetRange(No_no_conformidad, Rec."No. no conformidad");
-                PurchaseReturnOrderList.RunModal();
+                PurchaseReturnOrder.SetTableView(PurchaseHeader);
+                PurchaseReturnOrder.RunModal();
             end;
         }
         field(50006; "Pdte. Enviar Devol."; Boolean)
@@ -615,12 +616,13 @@ table 65113 "Cab no conformidad_CAL_btc"
             trigger OnLookup()
             var
                 PurchaseHeader: Record "Purchase Header";
-                PurchaseReturnOrderList: Page "Purchase Order List";
+                PurchaseReturnOrder: Page "Purchase Order";
             begin
                 PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::Order);
                 PurchaseHeader.SetRange("No.", Rec."Purch. Order");
                 PurchaseHeader.SetRange(No_no_conformidad, Rec."No. no conformidad");
-                PurchaseReturnOrderList.RunModal();
+                PurchaseReturnOrder.SetTableView(PurchaseHeader);
+                PurchaseReturnOrder.RunModal();
             end;
         }
     }

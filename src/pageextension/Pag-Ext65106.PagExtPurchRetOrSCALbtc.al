@@ -96,6 +96,7 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
 
     local procedure TraerNoConformidad()
     var
+        PurchaseHeaderRepos: Record "Purchase Header";
         CabNoconformidad: record "Cab no conformidad_CAL_btc";
         NoconformidadCal: page "No Conformidades_CAL_btc";
     begin
@@ -122,7 +123,8 @@ pageextension 65106 "PagExtPurchRetOrS_CAL_btc" extends "Purchase Return Order S
             FuntionsCal.CrearReturnOrderLine(CabNoconformidad, PurchaseHeader);
 
             if CabNoconformidad."Acción inmediata" in [CabNoconformidad."Acción inmediata"::"Dev. Reposicion a prov."] then begin
-                FuntionsCal.CrearReposicionOrderHeader(CabNoconformidad, PurchaseHeader);
+
+                FuntionsCal.CrearReposicionOrderHeader(CabNoconformidad, Rec."No.", PurchaseHeader);
 
                 FuntionsCal.CrearReposicionOrderLine(CabNoconformidad, PurchaseHeader);
 

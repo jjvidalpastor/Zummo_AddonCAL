@@ -30,6 +30,17 @@ tableextension 65118 "STH_Purchase_Header_Ext" extends "Purchase Header"
             DataClassification = CustomerContent;
             Editable = false;
             TableRelation = "Purchase Header"."No." where("Document Type" = const("Return Order"), "No." = field(ReturnOrderReposicion));
+
+            trigger OnLookup()
+            var
+                PurchaseHeader: record "Purchase Header";
+                PurchaseReturnOrder: page "Purchase Return Order";
+            begin
+                PurchaseHeader.SetRange("Document Type", PurchaseHeader."Document Type"::"Return Order");
+                PurchaseHeader.SetRange("No.", ReturnOrderReposicion);
+                PurchaseReturnOrder.SetTableView(PurchaseHeader);
+                PurchaseReturnOrder.RunModal();
+            end;
         }
         field(65104; PurchOrderReposicion; Code[20])
         {

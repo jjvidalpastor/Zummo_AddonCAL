@@ -582,7 +582,7 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         CrearReturnOrderLine(NoConformidad, PurchaseHeader);
 
         if NoConformidad."Acción inmediata" in [NoConformidad."Acción inmediata"::"Dev. Reposicion a prov."] then begin
-            CrearReposicionOrderHeader(NoConformidad, PurchaseHeaderRepos);
+            CrearReposicionOrderHeader(NoConformidad, PurchaseHeader."No.", PurchaseHeaderRepos);
 
             CrearReposicionOrderLine(NoConformidad, PurchaseHeaderRepos);
 
@@ -649,8 +649,11 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
 
     end;
 
-    procedure CrearReposicionOrderHeader(NoConformidad: Record "Cab no conformidad_CAL_btc"; var PurchaseHeader: Record "Purchase Header")
+    procedure CrearReposicionOrderHeader(NoConformidad: Record "Cab no conformidad_CAL_btc"; ReturnPurchaseHeaderNo: code[20]; var PurchaseHeader: Record "Purchase Header")
+    var
+        SetupCalidad_CAL_btc: record "Setup Calidad_CAL_btc";
     begin
+        SetupCalidad_CAL_btc.Get();
         PurchaseHeader.Init();
         PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::"Order";
         PurchaseHeader."No." := '';
@@ -658,18 +661,21 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseHeader.validate("Buy-from Vendor No.", NoConformidad."No. proveedor");
         PurchaseHeader.No_no_conformidad := NoConformidad."No. no conformidad";
         PurchaseHeader.No_inspection := NoConformidad."No. inspección";
-        PurchaseHeader."Location Code" := NoConformidad."Cód. almacén destino";
+        PurchaseHeader."Location Code" := SetupCalidad_CAL_btc."Location Code Raw";
+        PurchaseHeader.ReturnOrderReposicion := ReturnPurchaseHeaderNo;
         PurchaseHeader.Modify();
     end;
 
 
     procedure CrearReposicionOrderLine(NoConformidad: Record "Cab no conformidad_CAL_btc"; PurchaseHeader: Record "Purchase Header")
     var
+        SetupCalidad_CAL_btc: record "Setup Calidad_CAL_btc";
         PurchaseLine: Record "Purchase Line";
         PurchRcptHeader: Record "Purch. Rcpt. Header";
         PurchRcptLine: Record "Purch. Rcpt. Line";
         LineNo: Integer;
     begin
+        SetupCalidad_CAL_btc.Get();
         PurchaseLine.Reset();
         PurchaseLine.SetCurrentKey("Document Type", "Document No.", "Line No.");
         PurchaseLine."Document Type" := PurchaseHeader."Document Type";
@@ -693,7 +699,8 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseLine."Line No." := LineNo;
         PurchaseLine.Type := PurchaseLine.Type::Item;
         PurchaseLine.Validate("No.", NoConformidad."No. producto");
-        PurchaseLine."Location Code" := NoConformidad."Cód. almacén destino";
+        PurchaseLine."Location Code" := SetupCalidad_CAL_btc."Location Code Raw";
+        ;
         PurchaseLine.Validate(Quantity, NoConformidad."Cantidad Inspeccionada");
         PurchaseLine.Validate("Direct Unit Cost", PurchRcptLine."Direct Unit Cost");
         PurchaseLine.InspeccionDeCalidadCAL_BTC := true;
