@@ -709,7 +709,7 @@ codeunit 65100 "Cab Inspec Status Mgt_CAL_btc"
         PurchaseLine.NumNoConformidad_btc := NoConformidad."No. no conformidad";
         PurchaseLine.Insert();
 
-        PurchaseLine.Validate("Return Qty. to Ship", PurchaseLine.Quantity);
+        PurchaseLine.Validate("Qty. to Receive", PurchaseLine.Quantity);
         PurchaseLine.Modify();
 
     end;
